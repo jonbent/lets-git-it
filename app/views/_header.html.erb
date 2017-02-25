@@ -1,0 +1,8 @@
+<nav>
+	<% if logged_in? %>
+		<%= link_to "Logout", :logout %>
+ 	 	<p> Hey, <%= current_user.username %>!</p>
+ 	<%else%>
+		<%= link_to "Log In/Sigh Up", :github_auth %>
+	<% end %>
+</nav>
