@@ -35,6 +35,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#OmniAuth: Standardized Multi-Provider Authentication
+gem 'omniauth', '~> 1.6.1'
+
+#OmniAuth Github
+gem 'omniauth-github'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
