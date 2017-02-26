@@ -2,13 +2,31 @@
 <html>
   <head>
     <title>LetsGitIt</title>
+    <meta name="viewport" content=" initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body id="body">
     <%= yield %>
+    <div id="leftPage" class="beforeSwipe">
+      <p>Shit</p>
+      <p>More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit</p>
+      <p>More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit</p>
+      <p>More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit  </p>
+      <p>More Shit</p>
+      <p>More Shit</p><br>
+      <p>Shit</p>
+      <p>More Shit</p>
+      <p>More Shit</p>
+      <p>More Shit</p>
+
+    </div>
   </body>
 </html>

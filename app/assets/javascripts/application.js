@@ -14,3 +14,26 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function(){
+
+var homeSlide = document.getElementById('body');
+var slider = new Hammer(homeSlide)
+slider.on("panleft panright tap press", function(ev) {
+      // homeSlide.textContent = ev.type +" gesture detected.";
+      console.log(ev.type);
+      if(ev.type=="panleft"){
+      console.log("panleft")
+      // $('#body').css("background-color","green")
+       $('#leftPage').removeClass("leftPage");
+      }else if(ev.type=="panright"){
+        console.log("panright")
+        // $('#body').css("background-color","pink")
+        $('#leftPage').addClass("leftPage");
+      }
+  });
+
+
+});//END DOCUMENT READY
+
