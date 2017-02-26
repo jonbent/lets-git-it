@@ -7,8 +7,9 @@ Rails.application.routes.draw do
 
   resources :challenges, except:[:destroy]
   resources :users, only: [:show, :edit, :destroy, :create]
-  resources :notes
-
+  resources :scoreboard do
+    resources :notes
+  end
 
   get 'auth/developer', as: 'developer_auth'
   get 'auth/github', as: 'github_auth'
