@@ -18,12 +18,16 @@ Bundler.require(*Rails.groups)
 
 module LetsGitIt
   class Application < Rails::Application
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.middleware.use OmniAuth::Builder do
       provider :developer if Rails.env.development?
       provider :github, '0ac02624b12c4a791ec7', '6a0f37e3eb28c6622fc1ec232c8d5ada3a989af4'
+
+
     end
   end
 end
