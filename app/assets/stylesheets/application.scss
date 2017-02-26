@@ -85,7 +85,12 @@ table {
 /*--------------END RESET---------------*/
 
 
+a{
+  text-decoration: none;
 
+}
+
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900');
  @font-face {
   font-family: 'gitHub';
   src:url(asset-path('COLLEGIA.ttf'));
@@ -94,17 +99,49 @@ table {
 body{
   background:url(starry-night-sky.jpg);
   color:white;
-  font-size: 4em;
+ /* font-size: 4em;*/
 }
 .tester{
   font-family: 'gitHub';
+  font-family: 'Orbitron', sans-serif;
   /*font-family:"Comic Sans MS", cursive, sans-serif;*/
 
 }
 
-a.gitHubLogIn{
+.xheader{
+  margin-top: 10px;
+}
+
+.gitHubLogo{
+  background:url(gitHubLogo2017.png);
+  background-size: cover;
+  width:75px;
+  height:75px;
+  float:left;
+  margin-top: 0px;
+
+
+}
+.gitHubBtn{
   display: block;
-  background-color: red;
-  width: 200px;
-  height: 200px;
+  background-color: rgba(135,80,161,0.8);
+  width: 350px;
+  height: 75px;
+  color:#f8f0e3;
+
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow:1px 1px 1px #888888;
+  float: right;
+  margin-right: 10px;
+}
+.gitHubBtn:hover{
+  background-color: rgba(135,80,161,0.7);
+}
+.logText{
+  float: right;
+  font-size: 1.7em;
+  margin-top: 20px;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 2px 2px rgba(0,0,0,0.8);
 }

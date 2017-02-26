@@ -1,10 +1,20 @@
 <nav class="xheader">
-  <h1>GitHELLLLO</h1>
-  <h1 class="tester">GitHELLLLO</h1>
 	<% if logged_in? %>
-		<%= link_to "Logout", :logout %>
+		<%#= link_to "Logout", :logout %>
+    <%= link_to :logout, class: "gitHubBtn" do %>
+        <div class="gitHubLogo"></div>
+        <div class="logText">Logout of GitHub</div>
+    <% end %>
+
+
  	 	<p> Hey, <%= current_user.username %>!</p>
  	<%else%>
-		<%= link_to "", :github_auth, class: "gitHubLogIn" %>
+		<%#= link_to "", :github_auth, class: "gitHubLogIn" %>
+
+    <%= link_to :github_auth, class: "gitHubBtn" do %>
+        <div class="gitHubLogo"></div>
+        <div class="logText">Login with GitHub</div>
+    <% end %>
+
 	<% end %>
 </nav>
