@@ -1,0 +1,16 @@
+<article class="xviews xnotes xnew">
+  <h1>Create New Ah Ha</h1>
+  <%= form_for @note do |f| %>
+    <%= f.label :title %>:
+    <%= f.text_field :title %><br>
+    <%= f.label :body %>:
+    <%= f.text_field :body %><br>
+    <%= f.hidden_field :note_type, value: 'a' %><br>
+    <%= f.submit %>
+  <% end %>
+
+  <h1>Create New Blocker</h1>
+
+  <h1>Create New Feedback</h1>
+
+</article>
