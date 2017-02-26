@@ -41,6 +41,9 @@ gem 'omniauth', '~> 1.6.1'
 #OmniAuth Github
 gem 'omniauth-github'
 
+#HTTParty for making API calls
+gem 'httparty'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
