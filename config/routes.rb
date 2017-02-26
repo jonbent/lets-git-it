@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   root 'homes#index'
 
   resources :users, only: [:show, :edit, :destroy, :create]
+
   resources :scoreboards do
-    resources :challenges, except:[:destroy]
-    resources :notes
+    resources :challenges, only:[:index, :create, :new]
+    resources :notes, only:[:index, :create, :new, :show]
   end
 
   get 'auth/developer', as: 'developer_auth'

@@ -28,7 +28,6 @@ class NotesController < ApplicationController
 	end
 
 	private
-
 	def notes_params
 		params.require(:note).permit(:title, :body, :note_type, :scoreboard_id)
 	end
