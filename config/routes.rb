@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :challenges, except:[:destroy]
-  resources :scoreboards, only:[:new, :create, :show]
-
 
   get 'homes/index'
   root 'homes#index'
 
-  resources :users
+  resources :challenges, except:[:destroy]
+  resources :users, only: [:show, :edit, :destroy, :create]
+  resources :scoreboard do
+    resources :notes
+  end
 
   get 'auth/developer', as: 'developer_auth'
   get 'auth/github', as: 'github_auth'

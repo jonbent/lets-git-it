@@ -1,11 +1,5 @@
 <article class="xviews xscoreboard xnew">
 	<h1>Start a New Game</h1>
-	<%= form_for :scoreboard do |f| %>
-		<%= f.label :week %>
-		<%= f.select(:week, options_for_select([1,2,3,4,5,6,7,8,9])) %><br>
-		<%= f.label :day %>
-		<%= f.select(:day, options_for_select(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Weekend"]))%><br>
-		<%= f.submit "Let's Git It!" %>
-	<%end%> 
+<%=render "form"%>
 	
 </article>
