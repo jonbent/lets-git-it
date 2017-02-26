@@ -5,12 +5,10 @@ class ScoreboardsController < ApplicationController
 	end
 
 	def create
-		puts params
 		@scoreboard = Scoreboard.new(scoreboard_params)
-		puts @scoreboard
-		@scoreboard.user = @current_user
+		@scoreboard.user_id = current_user.id
 		if @scoreboard.save
-			redirect_to scoreboard_path
+			redirect_to scoreboard_path(@scoreboard)
 		else
 			flash[:failure] = "Couldn't start your game"
 			render :'new'
@@ -22,9 +20,8 @@ class ScoreboardsController < ApplicationController
 	end
 
 	private
-
 	def scoreboard_params
 		params.require(:scoreboard).permit(:day, :week)
 	end
-	
+
 end

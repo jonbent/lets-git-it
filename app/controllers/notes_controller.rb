@@ -10,6 +10,7 @@ class NotesController < ApplicationController
 		@scoreboard = Scoreboard.find(params[:scoreboard_id])
 		@note = Note.new
 	end
+
 	def create
 		@scoreboard = Scoreboard.find(params[:scoreboard_id])
 		@note = Note.create(notes_params)
