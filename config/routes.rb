@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   get 'homes/index'
   root 'homes#index'
 
-  resources :challenges, except:[:destroy]
   resources :users, only: [:show, :edit, :destroy, :create]
   resources :scoreboards do
+    resources :challenges, except:[:destroy]
     resources :notes
   end
 
