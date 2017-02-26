@@ -1,16 +1,42 @@
 <article class="xviews xnotes xnew">
   <h1>Create New Ah Ha</h1>
-  <%= form_for @note do |f| %>
-    <%= f.label :title %>:
-    <%= f.text_field :title %><br>
-    <%= f.label :body %>:
-    <%= f.text_field :body %><br>
-    <%= f.hidden_field :note_type, value: 'a' %><br>
-    <%= f.submit %>
-  <% end %>
-
+  <div class='notes-container'>
+    <%= form_for [@scoreboard, @note] do |f| %>
+      <%= f.label :title %>:
+      <%= f.text_field :title %><br>
+      <%= f.label :body %>:
+      <%= f.text_field :body %><br>
+      <%= f.hidden_field :note_type, value: 'a' %><br>
+      <%= f.hidden_field :scoreboard_id, value: "#{@scoreboard.id}" %><br>
+      <%= f.submit %>
+    <% end %>
+  </div>
   <h1>Create New Blocker</h1>
+  <div class='notes-container'>
+
+    <%= form_for [@scoreboard, @note] do |f| %>
+      <%= f.label :title %>:
+      <%= f.text_field :title %><br>
+      <%= f.label :body %>:
+      <%= f.text_field :body %><br>
+      <%= f.hidden_field :note_type, value: 'b' %><br>
+      <%= f.hidden_field :scoreboard_id, value: "#{@scoreboard.id}" %><br>
+      <%= f.submit %>
+    <% end %>
+  </div>
 
   <h1>Create New Feedback</h1>
+  <div class='notes-container'>
+
+    <%= form_for [@scoreboard, @note] do |f| %>
+      <%= f.label :title %>:
+      <%= f.text_field :title %><br>
+      <%= f.label :body %>:
+      <%= f.text_field :body %><br>
+      <%= f.hidden_field :note_type, value: 'f' %><br>
+      <%= f.hidden_field :scoreboard_id, value: "#{@scoreboard.id}" %><br>
+      <%= f.submit %>
+    <% end %>
+  </div>
 
 </article>
