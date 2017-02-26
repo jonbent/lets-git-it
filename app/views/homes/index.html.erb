@@ -1,12 +1,2 @@
-Hello
 
-
-<%= link_to "Log In/Sigh Up", :github_auth %>
-
-
-
-<% if logged_in? %>
-<b>LOGOUT---> </b>
-<%= link_to "Logout", :logout %>
-  <p> Hey fuck, <%= current_user.username %>!</p>
-<% end %>
+<%= render partial: '/header' %>

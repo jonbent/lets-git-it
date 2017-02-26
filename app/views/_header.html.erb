@@ -1,0 +1,10 @@
+<nav class="xheader">
+  <h1>GitHELLLLO</h1>
+  <h1 class="tester">GitHELLLLO</h1>
+	<% if logged_in? %>
+		<%= link_to "Logout", :logout %>
+ 	 	<p> Hey, <%= current_user.username %>!</p>
+ 	<%else%>
+		<%= link_to "", :github_auth, class: "gitHubLogIn" %>
+	<% end %>
+</nav>
