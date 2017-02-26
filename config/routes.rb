@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :challenges, except:[:destroy]
   resources :users, only: [:show, :edit, :destroy, :create]
-  resources :scoreboard do
+  resources :scoreboards do
     resources :notes
   end
 
