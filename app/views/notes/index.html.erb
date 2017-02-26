@@ -1,0 +1,25 @@
+<article class="xviews xnotes xindex">
+  <h1>All the Challenges That There Are</h1>
+
+
+  <h2>Blocker</h2>
+  <% @notes.each do |note| %>
+    <% if note.note_type.downcase == 'b' %>
+      <h3>  <%= link_to "#{note.title}", note_path(note) %> </h3>
+    <% end %>
+  <% end %>
+
+  <h2>Ah ha</h2>
+  <% @notes.each do |note| %>
+    <% if note.note_type.downcase == 'a' %>
+      <h3>  <%= link_to "#{note.title}", note_path(note) %> </h3>
+    <% end %>
+  <% end %>
+
+  <h2>Feedback</h2>
+  <% @notes.each do |note| %>
+    <% if note.note_type.downcase == 'f' %>
+    <h3>  <%= link_to "#{note.title}", note_path(note) %> </h3>
+    <% end %>
+  <% end %>
+</article>
