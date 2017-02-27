@@ -5,9 +5,12 @@ class HomesController < ApplicationController
 
     # @current_user ||= User.find_by_id(session[:user])
     #
-    # client = Octokit::Client.new(:access_token => '810aa1b52dcb8040b3c9ac8ebfed00acccbc1b2f' )
-    #
-    #
+    client = Octokit::Client.new(client_id: ENV['GITHUB_KEY'], client_secret: ENV['GITHUB_SECRET'])
+    user = client.user 'georgebabayan'
+    repos = user.rels[:repos].get.data
+    @github_response = repos.size
+
+
     # user = Octokit.user client.login
     #
     # # Get the repos rel, returned from the API
@@ -19,7 +22,6 @@ class HomesController < ApplicationController
     # repos.last.name
     # # => "faraday-zeromq"
     #
-
 
     # @github_response = HTTParty.get("https://api.github.com/users/georgebabayan/repos?access_token=#{ENV[GITHUB_SECRET]}")
 
