@@ -14,8 +14,9 @@
   </head>
 
   <body id="body">
+    <%= render partial: '/header' %>
     <%= yield %>
-    <div id="leftPage" class="beforeSwipe">
+    <div id="leftPage" class="beforeSwipeLeft">
       <p>Shit</p>
       <p>More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit</p>
       <p>More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit</p>
@@ -26,7 +27,8 @@
       <p>More Shit</p>
       <p>More Shit</p>
       <p>More Shit</p>
+    </div><!-- End leftPage -->
+    <div id="rightPage" class="beforeSwipeRight">
 
-    </div>
   </body>
 </html>
