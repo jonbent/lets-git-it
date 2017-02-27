@@ -42,10 +42,13 @@ gem 'omniauth', '~> 1.6.1'
 gem 'omniauth-github'
 
 #HTTParty for making API calls
-gem 'httparty'
+# gem 'httparty'
 
 #Gem for github App calls from ruby
-gem 'github_api'
+# gem 'github_api'
+
+#One more api - gem for
+gem 'octokit', '~> 4.0'
 
 #gem for irb consle, changes view for tables
 gem 'hirb'

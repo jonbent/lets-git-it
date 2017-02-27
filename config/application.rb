@@ -25,7 +25,7 @@ module LetsGitIt
     # -- all .rb files in that directory are automatically loaded.
     config.middleware.use OmniAuth::Builder do
       provider :developer if Rails.env.development?
-      provider :github, '0ac02624b12c4a791ec7', '6a0f37e3eb28c6622fc1ec232c8d5ada3a989af4'
+      provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
 
 
     end
