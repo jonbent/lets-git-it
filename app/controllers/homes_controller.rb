@@ -6,7 +6,6 @@ class HomesController < ApplicationController
 
     # client = Octokit::Client.new(:access_token => "")
     #
-    # # client = Octokit::Client.new(:login => 'georgebabayan', :password => 'snm4k7d')
     #
     #
     # user = Octokit.user client.login
