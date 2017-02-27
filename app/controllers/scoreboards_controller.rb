@@ -8,7 +8,7 @@ class ScoreboardsController < ApplicationController
 		@scoreboard = Scoreboard.new(scoreboard_params)
 		@scoreboard.user_id = current_user.id
 		if @scoreboard.save
-			redirect_to scoreboard_path(@scoreboard)
+			redirect_to scoreboards_path(@scoreboard)
 		else
 			flash[:failure] = "Couldn't start your game"
 			render :'new'
