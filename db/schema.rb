@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170226235012) do
+ActiveRecord::Schema.define(version: 20170227182424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(version: 20170226235012) do
     t.integer  "scoreboard_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "week"
+    t.string   "day"
+    t.string   "cohort"
     t.index ["scoreboard_id"], name: "index_challenges_on_scoreboard_id", using: :btree
   end
 
@@ -43,6 +46,7 @@ ActiveRecord::Schema.define(version: 20170226235012) do
     t.datetime "updated_at", null: false
     t.integer  "week"
     t.string   "cohort"
+    t.integer  "commits"
     t.index ["user_id"], name: "index_scoreboards_on_user_id", using: :btree
   end
 

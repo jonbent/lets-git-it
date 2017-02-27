@@ -6,9 +6,11 @@ class ScoreboardsController < ApplicationController
 
 	def create
 		@scoreboard = Scoreboard.new(scoreboard_params)
-		@scoreboard.user_id = current_user.id
+		@scoreboard.init
+		@scoreboard.challenges = Challenge.where(week: @scoreboard.week.to_i, day: @scoreboard.day.capitalize)
 		if @scoreboard.save
-			redirect_to scoreboard_path(@scoreboard)
+			session[:scoreboard_id] = @scoreboard.id
+			redirect_to @scoreboard
 		else
 			flash[:failure] = "Couldn't start your game"
 			render :'new'
@@ -19,9 +21,20 @@ class ScoreboardsController < ApplicationController
 		@scoreboard = Scoreboard.find(params[:id])
 	end
 
+	def update
+		@scoreboard = current_scoreboard
+
+		p @scoreboard.id
+		@scoreboard.score(1)
+		p @scoreboard.day_points
+		@scoreboard.save
+		redirect_to @scoreboard
+	end
+
 	private
+
 	def scoreboard_params
-		params.require(:scoreboard).permit(:day, :week)
+		params.require(:scoreboard).permit(:day, :week, :cohort)
 	end
 
 end
