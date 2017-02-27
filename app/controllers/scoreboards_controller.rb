@@ -7,6 +7,8 @@ class ScoreboardsController < ApplicationController
 	def create
 		@scoreboard = Scoreboard.new(scoreboard_params)
 		@scoreboard.user_id = current_user.id
+		@scoreboard.commits 
+		@scoreboard.day_points = 1
 		if @scoreboard.save
 			redirect_to scoreboard_path(@scoreboard)
 		else
