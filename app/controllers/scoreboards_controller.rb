@@ -6,11 +6,13 @@ class ScoreboardsController < ApplicationController
 
 	def create
 		@scoreboard = Scoreboard.new(scoreboard_params)
-		@scoreboard.user_id = current_user.id
-		@scoreboard.day_points += 1
+		puts @scoreboard.inspect
+		# @scoreboard.user_id = current_user.id
+		# @scoreboard.day_points += 1
+		@scoreboard.challenges = Challenge.where(week: @scoreboard.week.to_i, day: @scoreboard.day.capitalize)
 		if @scoreboard.save
 			session[:scoreboard_id] = @scoreboard.id
-			redirect_to scoreboard_path(@scoreboard)
+			redirect_to @scoreboard
 		else
 			flash[:failure] = "Couldn't start your game"
 			render :'new'

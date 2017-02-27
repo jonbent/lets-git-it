@@ -20,7 +20,7 @@ module SessionsHelper
   end
 
   def current_scoreboard
-    @current_scoreboard = Scoreboard.find(sessions[:scoreboard_id])
+    @current_scoreboard = Scoreboard.find(session[:scoreboard_id])
   end
 
 end

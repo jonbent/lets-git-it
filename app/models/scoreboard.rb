@@ -1,5 +1,5 @@
 class Scoreboard < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :challenges
   has_many :notes
   after_initialize :init
