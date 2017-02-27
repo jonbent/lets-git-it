@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'homes/index'
   root 'scoreboards#new'
 
-  resources :users, only: [:show, :edit, :destroy, :create]
+  resources :users, only: [:index, :edit, :destroy, :create]
 
   resources :scoreboards do
     resources :challenges, only:[:index, :create, :new]
