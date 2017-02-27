@@ -10,10 +10,12 @@
  	 	<p> Hey, <%= current_user.username %>!</p><br>
 
 
-		<p> <%= @github_response  %></p><br><br>
+		<p> <%#= @github_response.size  %></p><br><br>
 
 		<%# @github_response.each do |x|  %>
-		<%#= p x %>
+			<%# x.each do |d|  %>
+			<%#= p d %>
+			<%# end %>
 		<%# end %>
 
  	<%else%>

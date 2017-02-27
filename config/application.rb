@@ -10,10 +10,12 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
+require "dotenv-rails"
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
+Dotenv.load
 Bundler.require(*Rails.groups)
 
 module LetsGitIt
@@ -25,9 +27,8 @@ module LetsGitIt
     # -- all .rb files in that directory are automatically loaded.
     config.middleware.use OmniAuth::Builder do
       provider :developer if Rails.env.development?
-      provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
 
-
+      provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], scope: "user,repo,gist"
     end
   end
 end
