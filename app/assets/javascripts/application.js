@@ -18,64 +18,58 @@
 
 $(document).ready(function(){
 
-var homeSlide = document.getElementById('home');
-var slider = new Hammer(homeSlide)
-slider.on("panleft panright tap press", function(ev) {
-      // homeSlide.textContent = ev.type +" gesture detected.";
-      console.log(ev.type);
-      if(ev.type=="panleft"){
-      console.log("panleft")
-      // $('#body').css("background-color","green")
-       $('#leftPage').removeClass("leftPage");
-      }else if(ev.type=="panright"){
-        console.log("panright")
-        // $('#body').css("background-color","pink")
-        $('#leftPage').addClass("leftPage");
-        $('#home').addClass("afterSwipeLeftHome");
-      }
-  });//End Home slider
+  var homeSlide = document.getElementById('home');
+  var slider = new Hammer(homeSlide)
+  slider.on("panleft panright tap press", function(ev) {
+        console.log(ev.type);
+        if(ev.type=="panleft"){
+          // console.log("panleft")
+         $('#rightPage').addClass("rightPage");
+         $('#home').addClass("afterSwipeRightHome");
+        }else if(ev.type=="panright"){
+          // console.log("panright")
+          $('#leftPage').addClass("leftPage");
+          $('#home').addClass("afterSwipeLeftHome");
+        }
+    });//End Home slider
 
 
-
-var leftPageSlide = document.getElementById('leftPage');
-var slider = new Hammer(leftPageSlide)
-slider.on("panleft panright tap press", function(ev) {
-      // homeSlide.textContent = ev.type +" gesture detected.";
-      // console.log(ev.type);
-      if(ev.type=="panleft"){
+  var leftPageSlide = document.getElementById('leftPage');
+  var slider = new Hammer(leftPageSlide)
+  slider.on("panleft panright tap press", function(ev) {
+    if(ev.type=="panleft"){
       // console.log("panleft")
-      // $('#body').css("background-color","green")
-       $('#leftPage').removeClass("leftPage", callBack());
-       // document.getElementById("#leftPage").addEventListener("transitionend", callBack());
-          // $('#home').removeClass("afterSwipeLeftHome");
-          // $('#home').show();
-
-       // });
-
+     $('#leftPage').removeClass("leftPage", homeAfterLeft());
+    }else if(ev.type=="panright"){
+      // console.log("panright")
+      $('#leftPage').addClass("leftPage");
+    }
+  });//End left Page slider
 
 
-
-      }else if(ev.type=="panright"){
-        // console.log("panright")
-        // $('#body').css("background-color","pink")
-        $('#leftPage').addClass("leftPage");
-      }
-  });
+  var rightPageSlide = document.getElementById('rightPage');
+  var slider = new Hammer(rightPageSlide)
+  slider.on("panleft panright tap press", function(ev) {
+     if(ev.type=="panleft"){
+       // console.log("panleft")
+     }else if(ev.type=="panright"){
+       // console.log("panright")
+       $('#rightPage').removeClass("rightPage", homeAfterRight());
+     }
+  });//End RightPage slider
 
 });//END DOCUMENT READY
 
 
-
-function callBack() {
-  console.log("FUCCCCCKKKKK");
-
+function homeAfterLeft() {
   setTimeout(function(){
     $('#home').removeClass("afterSwipeLeftHome");
   }, 400);
+}
 
-   // $('#home').removeClass("afterSwipeLeftHome");
 
-
-    // this.innerHTML = "transitionend event occured - The transition has completed";
-    // this.style.backgroundColor = "pink";
+function homeAfterRight(){
+    setTimeout(function(){
+    $('#home').removeClass("afterSwipeRightHome");
+    }, 400);
 }

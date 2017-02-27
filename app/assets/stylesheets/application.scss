@@ -94,26 +94,29 @@ table {
 
 a{
   text-decoration: none;
-
 }
 
 @import url('https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900');
- @font-face {
+@font-face {
   font-family: 'gitHub';
   src:url(asset-path('COLLEGIA.ttf'));
-
 }
+
 body{
   background:url(starry-night-sky.jpg);
   color:white;
   height:1000px;
- /* font-size: 4em;*/
 }
+
+.fixSafariOverflow{
+  overflow-x:hidden;
+  max-width: 100%;
+}
+
 .tester{
   font-family: 'gitHub';
   font-family: 'Orbitron', sans-serif;
   /*font-family:"Comic Sans MS", cursive, sans-serif;*/
-
 }
 
 .xheader{
@@ -127,9 +130,8 @@ body{
   height:55px;
   float:left;
   margin-top: 0px;
-
-
 }
+
 .gitHubBtn{
   display: block;
   background-color: rgba(135,80,161,0.8);
@@ -140,14 +142,12 @@ body{
   padding: 10px;
   border-radius: 10px;
   box-shadow:1px 1px 1px #888888;
-  /*float: right;*/
-  /*margin-right: 10px;*/
-
-
 }
+
 .gitHubBtn:hover{
   background-color: rgba(135,80,161,0.7);
 }
+
 .logText{
   float: right;
   font-size: 1.4em;
@@ -163,11 +163,10 @@ body{
   height:1000px;
   margin-top: 10px;
   margin-left: -100%;
-
   transition: margin-left 0.5s;
   -webkit-transition: margin-left 0.5s;
-
 }
+
 .beforeSwipeLeft p, .beforeSwipeRight p{
   color:black;
 }
@@ -175,20 +174,41 @@ body{
 .leftPage{
   display: block;
   margin-left: 0%;
-
-  /*margin-top: 10px;*/
- /* width:90%;*/
-  /*height:1000px;*/
-  /*background-color: rgba(255,255,255,0.8);*/
 }
 
 .home{
   float:none;
   transition: margin-left 0.5s;
   -webkit-transition: margin-left 0.5s;
+    transition: margin-right 0.5s;
+  -webkit-transition: margin-right 0.5s;
 }
 
 .afterSwipeLeftHome{
+  display:none;
   margin-right: -100%;
   float:right;
+}
+
+.afterSwipeRightHome{
+  display:none;
+  margin-left:-100%;
+  float:left;
+}
+
+.beforeSwipeRight{
+  float:right;
+  background-color: rgba(255,255,255,0.8);
+  width:95%;
+  margin-left: 5%;
+  height:1000px;
+  margin-top: 10px;
+  margin-right: -100%;
+  transition: margin-right 0.5s;
+  -webkit-transition: margin-right 0.5s;
+}
+
+.rightPage{
+  display: block;
+  margin-right: 0%;
 }
