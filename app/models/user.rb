@@ -1,7 +1,12 @@
 class User < ApplicationRecord
 	has_many :scoreboards
+	after_initialize :init
 
-	def level
+	def init
+		self.number_commits = 0
+		self.total_points = 0
+	end
+		def level
 		score = self.total_points_change
 		# unless score
 		# 	score = 0
@@ -16,6 +21,5 @@ class User < ApplicationRecord
 		# end
 		1
 	end
-
 
 end
