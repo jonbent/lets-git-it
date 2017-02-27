@@ -1,0 +1,11 @@
+content = HTTParty.get('https://api.github.com/repos/:cohort/:repo_name/readme')['content']
+
+decoded_content = Base64.decode64(content)
+
+decoded_content.scan('Release')
+
+repos = HTTParty.get('https://api.github.com/orgs/:cohort/repos')
+
+
+
+ce4bb6d7911a42efdaaac9aaa036315f7a006cdd

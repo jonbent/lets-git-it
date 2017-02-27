@@ -44,6 +44,10 @@ gem 'omniauth-github'
 #HTTParty for making API calls
 gem 'httparty'
 
+#Gem for github App calls from ruby
+gem 'github_api'
+
+#gem for irb consle, changes view for tables
 gem 'hirb'
 
 group :development, :test do
