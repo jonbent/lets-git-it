@@ -5,8 +5,9 @@ Day: <%=@scoreboard.day%><br>
 Week: <%=@scoreboard.week%><br>
 Phase: <%=@scoreboard.phase%><br>
 Today's Points: <%=@scoreboard.day_points%><br>
-Commits: <%=@scoreboard.commits%>
+Commits: <%=current_scoreboard.commits%>
 <% @challenges = @scoreboard.challenges %>
 <% if @scoreboard.challenges %>
 	<%= render "scoreboard_challenges"%>
 <% end %>
+<%= render "users/ee_buttons" %>
