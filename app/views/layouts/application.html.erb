@@ -2,13 +2,39 @@
 <html>
   <head>
     <title>LetsGitIt</title>
+    <meta name="viewport" content=" initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body id="body">
+  <div class="fixSafariOverflow">
+    <%= render partial: '/header' %>
     <%= yield %>
+    <div id="leftPage" class="beforeSwipeLeft">
+      <p>Shit</p>
+      <p>More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit</p>
+      <p>More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit</p>
+      <p>More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit  </p>
+      <p>More Shit</p>
+      <p>More Shit</p><br>
+      <p>Shit</p>
+      <p>More Shit</p>
+      <p>More Shit</p>
+      <p>More Shit</p>
+    </div><!-- End leftPage -->
+    <div id="rightPage" class="beforeSwipeRight">
+      <p>Right page shit right page shit</p>
+      <p>Right page shit right page shit</p>
+      <p>Right page shit right page shit Right page shit right page shit Right page shit right page shit Right page shit right page shit Right page shit right page shit Right page shit right page shit Right page shit right page shit Right page shit right page shit</p>
+      <p>Right page shit right page shit</p>
+    </div>
+  </div> <!-- END fixSafariOverflow -->
   </body>
 </html>
