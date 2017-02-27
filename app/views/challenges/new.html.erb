@@ -1,0 +1,16 @@
+<article class="xviews xchallenges xnew">
+	<h1>Create a new challenge</h1>
+
+	<div class='challenges-container'>
+		<%= form_for [@scoreboard, @challenge] do |f| %>
+			<%= f.label :title %>:
+			<%= f.text_field :title %><br>
+			<%= f.label :releases %>:
+			<%= f.text_field :releases %><br>
+			<%= f.hidden_field :completed, value: 0 %><br>
+			<%= f.hidden_field :scoreboard_id, value: "#{@scoreboard.id}" %><br>
+			<%= f.submit %>
+		<% end %>
+	</div>
+
+</article>
