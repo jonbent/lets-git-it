@@ -7,7 +7,15 @@
     <% end %>
 
 
- 	 	<p> Hey, <%= current_user.username %>!</p>
+ 	 	<p> Hey, <%= current_user.username %>!</p><br>
+
+
+		<p> <%= @github_response  %></p><br><br>
+
+		<%# @github_response.each do |x|  %>
+		<%#= p x %>
+		<%# end %>
+
  	<%else%>
 		<%#= link_to "", :github_auth, class: "gitHubLogIn" %>
 
