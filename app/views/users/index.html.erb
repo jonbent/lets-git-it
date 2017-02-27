@@ -5,8 +5,10 @@
 <br>
 <% if @scoreboard %>
 	<p>Score: <%=@scoreboard.day_points%></p>
-	<p>Commits: <%=@scoreboard.commits%></p>
+	<p>Commits: <%#@scoreboard.commits%></p>
 <%end%>
+
+<%= render "ee_buttons" %>
 
 
 

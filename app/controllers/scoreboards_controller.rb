@@ -7,9 +7,9 @@ class ScoreboardsController < ApplicationController
 	def create
 		@scoreboard = Scoreboard.new(scoreboard_params)
 		@scoreboard.user_id = current_user.id
-		@scoreboard.commits 
-		@scoreboard.day_points = 1
+		@scoreboard.day_points += 1
 		if @scoreboard.save
+			session[:scoreboard_id] = @scoreboard.id
 			redirect_to scoreboard_path(@scoreboard)
 		else
 			flash[:failure] = "Couldn't start your game"
@@ -22,8 +22,9 @@ class ScoreboardsController < ApplicationController
 	end
 
 	private
+
 	def scoreboard_params
-		params.require(:scoreboard).permit(:day, :week)
+		params.require(:scoreboard).permit(:day, :week, :cohort)
 	end
 
 end

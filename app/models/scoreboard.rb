@@ -14,7 +14,7 @@ class Scoreboard < ApplicationRecord
   	end
   	phase
   	# current_user.phase
-  endgit
+  end
 
   def cohort
   	"squirrels"
