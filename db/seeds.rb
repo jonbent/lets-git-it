@@ -12,10 +12,38 @@ Scoreboard.destroy_all
 
 User.destroy_all
 
+challenges = [{
+	title: "TCP Challenge",
+	week: 4,
+	day: "Monday",
+	cohort: "Squirrels",
+	releases: 3
+	},
+	{
+	title: "HTTP Scavenger Hunt",
+	week: 4,
+	day: "Monday",
+	cohort: "Squirrels",
+	releases: 0
+	},
+	{
+	title: "Cheering Mascot",
+	week: 4,
+	day: "Monday",
+	cohort: "Squirrels",
+	releases: 3
+	},
+	{title: "Anonymous Blog", week: 4, day: "Monday",cohort: "Squirrels", releases: 5}
+]
+
+
+
 
 u = User.create(username: "Bill",phase: 2, cohort: "Otters",total_points: 1)
 s = Scoreboard.create(user: u,day_points: 10, day: "Friday")
-Challenge.create(title: "Ruby Racer",releases: 2, completed: 0, scoreboard: s)
+challenges.each do |params|
+	Challenge.create(params)
+end
 
 Note.create(title: "WhatEver",body: "Screw you all", note_type: "b", scoreboard: s)
 
