@@ -1,22 +1,24 @@
 <nav class="xheader">
-	<% if logged_in? %>
-		<%#= link_to "Logout", :logout %>
-    <%= link_to :logout, class: "gitHubBtn" do %>
+  <ul>
+  	<% if logged_in? %>
+  		<%#= link_to "Logout", :logout %>
+      <li class="gitLi"><%= link_to :logout, class: "gitHubBtn" do %>
+          <div class="gitHubLogo"></div>
+          <div class="logText">Logout</div>
+      </li>
+      <% end %>
+  		<%# @github_response.each do |x|  %>
+  		<%#= p x %>
+  		<%# end %>
+   	<%else%>
+  		<%#= link_to "", :github_auth, class: "gitHubLogIn" %>
+      <li class="gitLi"><%= link_to :github_auth, class: "gitHubBtn" do %>
         <div class="gitHubLogo"></div>
-        <div class="logText">Logout of GitHub</div>
-    <% end %>
-
-		<%# @github_response.each do |x|  %>
-		<%#= p x %>
-		<%# end %>
-
- 	<%else%>
-		<%#= link_to "", :github_auth, class: "gitHubLogIn" %>
-
-    <%= link_to :github_auth, class: "gitHubBtn" do %>
-        <div class="gitHubLogo"></div>
-        <div class="logText">Login with GitHub</div>
-    <% end %>
-
-	<% end %>
+        <div class="logText">Log in with GitHub</div>
+      </li>
+      <% end %>
+  	<% end %> <!-- END IF ELSE -->
+    <a href="#"><li>RightPage</li></a>
+    <a href="#"><li>LeftPage</li></a>
+  </ul>
 </nav>
