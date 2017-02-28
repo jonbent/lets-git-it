@@ -1,8 +1,8 @@
-<h1>Hey, User!</h1>
-
-<p>Level <%#@user.level%></p>
-<p>Total Score: <%#@user.total_points%></p>
-<br>
+<h1>Let's Git It!</h1>
+<% if logged_in? %>
+	<p>Level <%#=@user.level%></p>
+	<p>Total Score: <%#=@user.total_points%></p>
+<% end %>
 <% if @scoreboard %>
 	<p>Score: <%=@scoreboard.day_points%></p>
 	<p>Commits: <%#@scoreboard.commits%></p>
