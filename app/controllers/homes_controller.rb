@@ -3,7 +3,8 @@ class HomesController < ApplicationController
   #before_filter :ensure_logged_in, except: :index
   def index
     # @current_user ||= User.find_by_id(session[:user])
-
+    p ENV['GITHUB_KEY']
+    p ENV['GITHUB_SECRET']
     client = Octokit::Client.new(client_id: ENV['GITHUB_KEY'], client_secret: ENV['GITHUB_SECRET'])
 
 
