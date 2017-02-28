@@ -1,12 +1,15 @@
 class User < ApplicationRecord
 	has_many :scoreboards
 	after_initialize :init
+	serialize :user_hash, JSON
 
 	def init
 		self.number_commits = 0
 		self.total_points = 0
+		# self.user_hash = {}
 	end
-		def level
+
+	def level
 		score = self.total_points_change
 		# unless score
 		# 	score = 0
@@ -16,7 +19,7 @@ class User < ApplicationRecord
 		# 	return 1
 		# when 10 < score < 30
 		# 	return 2
-		# when 30 < score < 100 
+		# when 30 < score < 100
 		# 	return 3
 		# end
 		1

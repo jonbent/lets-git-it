@@ -8,8 +8,11 @@
 
 
  	 	<p> Hey, <%= current_user.username %>!</p><br>
+ 	 	<p> Your email <%= current_user.user_hash['extra']['raw_info']['email'] %>!</p><br>
+ 	 	<p> Total private repos <%=  current_user.user_hash['extra']['raw_info']['total_private_repos'] %>!</p><br>
+ 	 	<p> Total public repos <%=  current_user.user_hash['extra']['raw_info']['public_repos'] %>!</p><br>
 
-		<img src="<%= @avatar %>" alt="Smiley face" height="150" width="150">
+		<img src="<%= current_user.picture_url %>" alt="Smiley face" height="150" width="150">
 
 
 		<%# @github_response.each do |x|  %>
