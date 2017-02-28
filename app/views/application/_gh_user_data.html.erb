@@ -1,0 +1,7 @@
+<img src="<%= current_user.picture_url %>" alt="smiley face" height="150" width="150">
+<p> Welcome, <%= current_user.username %></p><br>
+<p> E-mail: <%= current_user.user_hash['extra']['raw_info']['email'] %></p>
+<p> Private Repos: <%=  current_user.user_hash['extra']['raw_info']['total_private_repos'] %></p>
+<p> Public Repos: <%=  current_user.user_hash['extra']['raw_info']['public_repos'] %></p>
+
+

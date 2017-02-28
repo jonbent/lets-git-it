@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'homes/index'
   root 'scoreboards#new'
 
+  get "scoreboards/download"  => 'scoreboards#download'
   resources :users, only: [:index, :edit, :destroy, :create]
 
   resources :scoreboards do
@@ -17,5 +18,6 @@ Rails.application.routes.draw do
   match 'auth/:provider/callback' => 'sessions#create', :via => [:get, :post]
 
   get 'sessions/destroy', as: 'logout'
+
 
 end
