@@ -19,8 +19,14 @@ module SessionsHelper
     redirect_to :root unless logged_in?
   end
 
+  def valid_scoreboard
+    !!session[:scoreboard_id]
+  end
+
   def current_scoreboard
-    @current_scoreboard = Scoreboard.find(session[:scoreboard_id])
+    if valid_scoreboard
+      @current_scoreboard = Scoreboard.find(session[:scoreboard_id])
+    end
   end
 
 end

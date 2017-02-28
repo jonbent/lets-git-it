@@ -18,13 +18,17 @@
     <%= render partial: '/header' %>
     <%= yield %>
     <div id="leftPage" class="beforeSwipeLeft">
-      <%= render partial: 'users/ee_buttons'%>
+      <% if valid_scoreboard %>
+        <%= render partial: 'users/ee_buttons'%>
+      <% end %>
     </div><!-- End leftPage -->
     <div id="rightPage" class="beforeSwipeRight">
-      <% @scoreboard = current_scoreboard %>
-      <% @note = Note.new %>
-     <%= render template:"notes/new", locals:{scoreboard_id: current_scoreboard.id, scoreboard: current_scoreboard}%>
-    </div>
+      <% if valid_scoreboard %>
+        <% @scoreboard = current_scoreboard %>
+        <% @note = Note.new %>
+        <%= render template:"notes/new", locals:{scoreboard_id: current_scoreboard.id, scoreboard: current_scoreboard}%>
+      <% end %>
+      </div>
   </div> <!-- END fixSafariOverflow -->
   </body>
 </html>
