@@ -2,13 +2,14 @@
 <% if logged_in? %>
 	<p>Level <%#=@user.level%></p>
 	<p>Total Score: <%#=@user.total_points%></p>
+	<%= render partial: "gh_user_data" %>
 <% end %>
 <% if @scoreboard %>
 	<p>Score: <%=@scoreboard.day_points%></p>
 	<p>Commits: <%#@scoreboard.commits%></p>
 <%end%>
 
-<%= render "ee_buttons" %>
+<%= render partial: "ee_buttons" %>
 
 
 
