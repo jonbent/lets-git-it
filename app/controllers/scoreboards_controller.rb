@@ -1,5 +1,6 @@
 class ScoreboardsController < ApplicationController
 
+
 	def new
 		@scoreboard = Scoreboard.new
 	end
@@ -29,6 +30,20 @@ class ScoreboardsController < ApplicationController
 		p @scoreboard.day_points
 		@scoreboard.save
 		redirect_to @scoreboard
+	end
+
+	def download
+		path = "path.txt"; array=[]
+
+		current_scoreboard.challenges.each do |element|
+			array << element.title
+		end
+
+		File.open(path, "w+") do |f|
+		  f.write(array)
+		end
+
+		send_file "path.txt"
 	end
 
 	private
