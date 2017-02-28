@@ -22,8 +22,9 @@ class ScoreboardsController < ApplicationController
 	end
 
 	def update
-		@scoreboard = current_scoreboard
 
+
+		@scoreboard = current_scoreboard
 		p @scoreboard.id
 		@scoreboard.score(1)
 		p @scoreboard.day_points
