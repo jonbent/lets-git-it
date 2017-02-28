@@ -18,22 +18,12 @@
     <%= render partial: '/header' %>
     <%= yield %>
     <div id="leftPage" class="beforeSwipeLeft">
-      <p>Shit</p>
-      <p>More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit</p>
-      <p>More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit</p>
-      <p>More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit More Shit  </p>
-      <p>More Shit</p>
-      <p>More Shit</p><br>
-      <p>Shit</p>
-      <p>More Shit</p>
-      <p>More Shit</p>
-      <p>More Shit</p>
+      <%= render partial: 'users/ee_buttons'%>
     </div><!-- End leftPage -->
     <div id="rightPage" class="beforeSwipeRight">
-      <p>Right page shit right page shit</p>
-      <p>Right page shit right page shit</p>
-      <p>Right page shit right page shit Right page shit right page shit Right page shit right page shit Right page shit right page shit Right page shit right page shit Right page shit right page shit Right page shit right page shit Right page shit right page shit</p>
-      <p>Right page shit right page shit</p>
+      <% @scoreboard = current_scoreboard %>
+      <% @note = Note.new %>
+     <%= render template:"notes/new", locals:{scoreboard_id: current_scoreboard.id, scoreboard: current_scoreboard}%>
     </div>
   </div> <!-- END fixSafariOverflow -->
   </body>
