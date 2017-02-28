@@ -1,7 +1,7 @@
 <article class="xviews xnotes xnew">
   <h1>Create New Ah Ha</h1>
   <div class='notes-container'>
-    <%= form_for [@scoreboard, @note] do |f| %>
+    <%= form_for [@scoreboard, @note], :html => {:class => "note-form"} do |f| %>
       <%= f.label :title %>:
       <%= f.text_field :title %><br>
       <%= f.label :body %>:
@@ -14,7 +14,7 @@
   <h1>Create New Blocker</h1>
   <div class='notes-container'>
 
-    <%= form_for [@scoreboard, @note] do |f| %>
+    <%= form_for [@scoreboard, @note], :html => {:class => "note-form"} do |f| %>
       <%= f.label :title %>:
       <%= f.text_field :title %><br>
       <%= f.label :body %>:
@@ -28,7 +28,7 @@
   <h1>Create New Feedback</h1>
   <div class='notes-container'>
 
-    <%= form_for [@scoreboard, @note] do |f| %>
+    <%= form_for [@scoreboard, @note], :html => {:class => "note-form"} do |f| %>
       <%= f.label :title %>:
       <%= f.text_field :title %><br>
       <%= f.label :body %>:
