@@ -5,8 +5,9 @@
   <div class='notes-container'>
 
     <%= form_for [@scoreboard, @note], :html => {:class => "note-form"} do |f| %>
-      <%= f.label :title, "Subject"   %>:
-      <%= f.text_field :title%><br>
+
+      <%= f.label :title, "Subject" %>:
+      <%= f.text_field :title  %><br>
       <%= f.label :body, "What I learned" %>
       <%= f.text_field :body %><br>
       <%= f.hidden_field :note_type, value: 'a' %><br>
