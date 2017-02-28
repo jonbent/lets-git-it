@@ -6,8 +6,11 @@ class HomesController < ApplicationController
 
     client = Octokit::Client.new(client_id: ENV['GITHUB_KEY'], client_secret: ENV['GITHUB_SECRET'])
     user = client.user 'georgebabayan'
-    @github_response = user
-    @avatar = @github_response[:avatar_url]
+    user.login
+    # p client
+    # p "@@" * 30
+    # @github_response = client
+    # @avatar = @github_response[:avatar_url]
 
     # # Get the repos rel, returned from the API
     # # as repos_url in the resource
