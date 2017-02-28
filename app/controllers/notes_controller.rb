@@ -15,7 +15,7 @@ class NotesController < ApplicationController
 		@scoreboard = Scoreboard.find(params[:scoreboard_id])
 		@note = Note.new(notes_params)
 		if request.xhr? && @note.save
-		else
+		elsif !request.xhr? && @note.save
 			redirect_to scoreboard_notes_path(@scoreboard)
 		end
 	end

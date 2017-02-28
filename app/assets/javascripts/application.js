@@ -59,6 +59,7 @@ $(document).ready(function(){
   });//End RightPage slider
 
   addNoteToDatabase()
+  addEngineeringEmpathyPoint();
 });//END DOCUMENT READY
 
 
@@ -89,6 +90,21 @@ var addNoteToDatabase = function(){
       data: data
     }).done(function(response){
       alert('Note successfully created')
+    })
+  })
+}
+
+var addEngineeringEmpathyPoint = function(){
+  $('.ee-btns').on('click', function(event){
+    event.preventDefault()
+    var url = $(this).attr('action')
+    console.log(url);
+    var data = 1
+    $.ajax({
+      method: 'patch',
+      url: url
+    }).done(function(response){
+      $('#points-container').html(response);
     })
   })
 }
