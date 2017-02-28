@@ -9,12 +9,11 @@
 	<%= render partial: "gh_user_data" %>
 <% end %>
 <% if @scoreboard %>
-	<p>Score: <%=@scoreboard.day_points%></p>
-	<p>Commits: <%#@scoreboard.commits%></p>
+	<div id="points-container">
+		<%= render partial: "score_commits", locals: {scoreboard: @scoreboard} %>
+	</div>
 <%end%>
 
 <%= render partial: "ee_buttons" %>
 
 </div>
-
-

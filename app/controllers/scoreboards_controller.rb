@@ -23,14 +23,15 @@ class ScoreboardsController < ApplicationController
 	end
 
 	def update
-
-
 		@scoreboard = current_scoreboard
-		p @scoreboard.id
 		@scoreboard.score(1)
-		p @scoreboard.day_points
 		@scoreboard.save
-		redirect_to @scoreboard
+		
+		if request.xhr?
+			render partial: 'score_commits', locals: {scoreboard: @scoreboard}
+		else
+			redirect_to @scoreboard
+		end
 	end
 
 	def download
