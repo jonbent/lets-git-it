@@ -1,8 +1,8 @@
 <!-- views/users/index.htm.erb -->
 
 <!-- <h1>Let's Git It!</h1> -->
-<article class="views users index">
-<img class="userPic" src="<%= current_user.picture_url %>" alt="Smiley face">
+<div class="views users index">
+
 <% if logged_in? %>
 <!-- 	<p>Level <%#=@user.level%></p>
 	<p>Total Score: <%#=@user.total_points%></p> -->
@@ -15,6 +15,6 @@
 
 <%= render partial: "ee_buttons" %>
 
-</article>
+</div>
 
 

@@ -166,25 +166,51 @@ nav.xheader  li.gitLi{
 /*----------LeftPage START----------*/
 
 .leftPage .backGroundFadeLeft{
-background-color: rgba(255,255,255,0.9);
+/*background-color: rgba(255,255,255,0.9);*/
 height:500px;
 }
-
+.views.scoreboard.gh_user_data h1{
+  color:white;
+  font-size: 2.7em;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top:20px;
+ /* text-shadow:1px 1px #888888;*/
+}
+.views.scoreboard.gh_user_data .gitInfo{
+  /*border:solid black 1px;*/
+  margin-right:3%;
+  margin-left:3%;
+  padding:10px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  /*border:solid black 1px;*/
+  font-size: 2em;
+  font-weight: 300;
+}
+.gitInfo li{
+  color:white;
+}
+/*.gitInfo*/
 .views.users.index{
   /*width:86%;*/
-  margin-right:7%;
-  margin-left:7%;
-  border:solid black 1px;
-  padding:10px;
+  margin-right:2%;
+  margin-left:2%;
+  /*border:solid black 1px;*/
+  padding: 10px;
+
   /*margin-top: 20px;*/
 }
 
-.userPic{
+img.userPic{
   border-radius: 50px;
   height:100px;
   width:100px;
   border: 1px solid $purple;
   box-shadow: 2px 2px 5px  rgba(0,0,0,0.8);
+  display: block;
+  margin: 0 auto;
 }
 /*----------LeftPage END----------*/
 /*---------Home Loged In---------*/
@@ -247,7 +273,7 @@ height:500px;
 }
 .beforeSwipeLeft{
   float:left;
-  background: url(coding1.jpg);
+  background: url(homeBgPlaceHolder.jpg);
   background-size: cover;
   height: 500px;
   /*background-color: rgba(255,255,255,0.5);*/
@@ -259,7 +285,7 @@ height:500px;
 }
 
 .beforeSwipeLeft p, .beforeSwipeRight p{
-  color:black;
+  color:white;
 }
 
 .leftPage{
@@ -288,12 +314,16 @@ height:500px;
 }
 
 .beforeSwipeRight{
+  color:white;
   float:right;
-  background-color: rgba(0,0,0,0.5);
-  width:95%;
-  margin-left: 5%;
+  /*background-color: rgba(0,0,0,0.5);*/
+  background: url(homeBgPlaceHolder.jpg);
+  background-size: cover;
+  height: 500px;
+  width:100%;
+  /*margin-left: 5%;*/
   height:1000px;
-  margin-top: 10px;
+  /*margin-top: 10px;*/
   margin-right: -100%;
   transition: margin-right 0.5s;
   -webkit-transition: margin-right 0.5s;
