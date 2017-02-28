@@ -1,12 +1,20 @@
-
-  <%= button_to "Make a commit"%><br>
-  <%= button_to "Ask someone for help" %><br>
-  <%= button_to "Help someone out" %><br>
-  <%= button_to "Take a break" %><br>
-  <%= button_to "Give ASK Feedback" %><br>
-
   <%= form_for current_scoreboard do |f| %>
-  	<%# f.hidden_field(points: 1) %>
   	<%= f.submit "Get to campus on time" %>
   <% end %>
-  <%= button_to "Get to campus on time" %><br>
+  <%= form_for current_scoreboard do |f| %>
+    <%= f.submit "Make a commit" %>
+  <% end %>
+  <%= form_for current_scoreboard do |f| %>
+    <%= f.submit "Ask someone for help" %>
+  <% end %>
+  <%= form_for current_scoreboard do |f| %>
+    <%= f.submit "Help someone out" %>
+  <% end %>
+  <%= form_for current_scoreboard do |f| %>
+    <%= f.submit "Take a break" %>
+  <% end %>
+  <%= form_for current_scoreboard do |f| %>
+    <%= f.submit "Give ASK Feedback" %>
+  <% end %>
+  
+  
