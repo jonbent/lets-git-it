@@ -102,6 +102,7 @@ table {
   src:url(asset-path('COLLEGIA.ttf'));
 }
 
+$purple: rgb(128,0,128);
 body{
  /* background:url(starry-night-sky.jpg);*/
   color:#7d8485;
@@ -128,7 +129,7 @@ nav.xheader li{
 
 nav.xheader  li:hover{
   background-color: rgba(0,0,0,0.2);
-  border-bottom: red solid 2px;
+  border-bottom: $purple solid 2px;
 }
 
 nav.xheader  li.gitLi{
@@ -170,7 +171,7 @@ height:500px;
 }
 
 .views.users.index{
-  width:86%;
+  /*width:86%;*/
   margin-right:7%;
   margin-left:7%;
   border:solid black 1px;
@@ -182,11 +183,63 @@ height:500px;
   border-radius: 50px;
   height:100px;
   width:100px;
-  border: 1px solid #8750a1;
+  border: 1px solid $purple;
   box-shadow: 2px 2px 5px  rgba(0,0,0,0.8);
 }
 /*----------LeftPage END----------*/
+/*---------Home Loged In---------*/
+/*views/scoreboards/show*/
+.views.scoreboard.show{
+  color:white;
+  /*width:86%;*/
+  margin-right:2%;
+  margin-left:2%;
+ /* border:solid black 1px;*/
+  padding:10px;
+}
+.views.scoreboard.show h1{
+  font-size: 2.7em;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top:20px;
+}
+.Breakline{
+  background-color: $purple;
+  height:2px;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-bottom: 10px;
+}
+.views.scoreboard.show .dayPoints{
+  margin-right:3%;
+  margin-left:3%;
+  padding:10px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  /*border:solid black 1px;*/
+  font-size: 2em;
+  font-weight: 300;
+}
+.views.scoreboard.show .dayPoints li{
+  margin-bottom: 10px;
+}
+.dayPoints span{
+  font-weight: 400;
+}
+/*views/scorboards/scoreboard_challenges*/
 
+.views.scorboards.scoreboard_challenges{
+  /*width:86%;*/
+  color:white;
+  margin-right:3%;
+  margin-left:3%;
+  /*border:solid black 1px;*/
+  padding:10px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+/*---------Home Loged In END---------*/
 .home{
   background: url(homeBgPlaceHolder.jpg);
   background-size: cover;
