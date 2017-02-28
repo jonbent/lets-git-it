@@ -3,11 +3,17 @@ class HomesController < ApplicationController
   #before_filter :ensure_logged_in, except: :index
   def index
     # @current_user ||= User.find_by_id(session[:user])
-
+    p ENV['GITHUB_KEY']
+    p ENV['GITHUB_SECRET']
     client = Octokit::Client.new(client_id: ENV['GITHUB_KEY'], client_secret: ENV['GITHUB_SECRET'])
-    user = client.user 'georgebabayan'
-    user.login
-    # p client
+
+
+
+    user = client.user current_user.user_hash['extra']['raw_info']['login']
+    # user.login
+    # p client.keys
+    p "@" *20
+    p user.fields
     # p "@@" * 30
     # @github_response = client
     # @avatar = @github_response[:avatar_url]
