@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
-    redirect_to :homes_index
+    redirect_to :root
   end
 
   def shu
