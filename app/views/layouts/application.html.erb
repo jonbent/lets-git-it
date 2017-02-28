@@ -17,17 +17,23 @@
   <div class="fixSafariOverflow">
     <%= render partial: '/header' %>
     <%= yield %>
+
     <div id="leftPage" class="beforeSwipeLeft">
-      <% if valid_scoreboard %>
-        <%= render template: 'users/index'%>
-      <% end %>
+      <div class="backGroundFadeLeft">
+        <% if valid_scoreboard %>
+          <%= render template: 'users/index'%>
+        <% end %>
+      </div>
     </div><!-- End leftPage -->
+
     <div id="rightPage" class="beforeSwipeRight">
-      <% if valid_scoreboard %>
-        <% @scoreboard = current_scoreboard %>
-        <% @note = Note.new %>
-        <%= render template:"notes/new", locals:{scoreboard_id: current_scoreboard.id, scoreboard: current_scoreboard}%>
-      <% end %>
+        <div class="backGroundFade">
+          <% if valid_scoreboard %>
+            <% @scoreboard = current_scoreboard %>
+            <% @note = Note.new %>
+            <%= render template:"notes/new", locals:{scoreboard_id: current_scoreboard.id, scoreboard: current_scoreboard}%>
+          <% end %>
+        </div>
       </div>
   </div> <!-- END fixSafariOverflow -->
   </body>

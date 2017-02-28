@@ -13,8 +13,11 @@ class NotesController < ApplicationController
 
 	def create
 		@scoreboard = Scoreboard.find(params[:scoreboard_id])
-		@note = Note.create(notes_params)
-		redirect_to scoreboard_notes_path(@scoreboard)
+		@note = Note.new(notes_params)
+		if request.xhr? && @note.save
+		else
+			redirect_to scoreboard_notes_path(@scoreboard)
+		end
 	end
 
 	def show
