@@ -80,6 +80,7 @@ var addNoteToDatabase = function(){
     event.preventDefault();
     debugger;
     var data = $(this).serialize()
+    $(this).children().val('')
     var method = $(this).attr('method')
     var url = $(this).attr('action')
     $.ajax({
