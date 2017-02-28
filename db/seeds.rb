@@ -929,7 +929,7 @@ challenges = [
 		day: "Friday",
 		cohort: "Squirrels",
 		releases: 1
-	},
+	}
 ]
 
 
