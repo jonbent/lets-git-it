@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get 'homes/index'
-  root 'homes#index'
+  root 'scoreboards#new'
 
   resources :users, only: [:index, :edit, :destroy, :create]
 
