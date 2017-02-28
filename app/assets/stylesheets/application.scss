@@ -92,20 +92,50 @@ table {
 
 
 
-a{
-  text-decoration: none;
-}
 
-@import url('https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900');
+
+/*@import url('https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900');*/
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700');
+
 @font-face {
   font-family: 'gitHub';
   src:url(asset-path('COLLEGIA.ttf'));
 }
 
+$purple: rgb(128,0,128);
 body{
-  background:url(starry-night-sky.jpg);
-  color:white;
+ /* background:url(starry-night-sky.jpg);*/
+  color:#7d8485;
   height:1000px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color:#7d8485;
+}
+/*---------NAV BAR START-------*/
+nav.xheader {
+  background-color: rgba(0,0,0,0.0);
+  height:60px;
+}
+
+nav.xheader li{
+  float:right;
+  padding:15px;
+  padding-top: 20px;
+  padding-bottom:22px;
+}
+
+nav.xheader  li:hover{
+  background-color: rgba(0,0,0,0.2);
+  border-bottom: $purple solid 2px;
+}
+
+nav.xheader  li.gitLi{
+  padding-top: 15px;
+  padding-bottom:18px;
+  margin-right:15px;
 }
 
 .fixSafariOverflow{
@@ -114,61 +144,148 @@ body{
 }
 
 .tester{
-  font-family: 'gitHub';
-  font-family: 'Orbitron', sans-serif;
-  /*font-family:"Comic Sans MS", cursive, sans-serif;*/
-}
-
-.xheader{
-  margin-top: 10px;
+ /*XXXXXXXXXXX*/
 }
 
 .gitHubLogo{
   background:url(gitHubLogo2017.png);
   background-size: cover;
-  width:55px;
-  height:55px;
+  width:25px;
+  height:25px;
   float:left;
-  margin-top: 0px;
-}
-
-.gitHubBtn{
-  display: block;
-  background-color: rgba(135,80,161,0.8);
-  width: 280px;
-  height: 60px;
-  color:#f8f0e3;
-  margin: 0 auto;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow:1px 1px 1px #888888;
-}
-
-.gitHubBtn:hover{
-  background-color: rgba(135,80,161,0.7);
+  /*margin-top: 0px;*/
 }
 
 .logText{
-  float: right;
-  font-size: 1.4em;
-  margin-top: 20px;
-  font-family: 'Orbitron', sans-serif;
-  text-shadow: 2px 2px rgba(0,0,0,0.8);
+  float: left;
+  font-weight: 600;
+  margin-top:5px;
+}
+/*---------NAV BAR END-------*/
+
+/*----------LeftPage START----------*/
+
+.leftPage .backGroundFadeLeft{
+/*background-color: rgba(255,255,255,0.9);*/
+height:500px;
+}
+.views.scoreboard.gh_user_data h1{
+  color:white;
+  font-size: 2.7em;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top:20px;
+ /* text-shadow:1px 1px #888888;*/
+}
+.views.scoreboard.gh_user_data .gitInfo{
+  /*border:solid black 1px;*/
+  margin-right:3%;
+  margin-left:3%;
+  padding:10px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  /*border:solid black 1px;*/
+  font-size: 2em;
+  font-weight: 300;
+}
+.gitInfo li{
+  color:white;
+}
+/*.gitInfo*/
+.views.users.index{
+  /*width:86%;*/
+  margin-right:2%;
+  margin-left:2%;
+  /*border:solid black 1px;*/
+  padding: 10px;
+
+  /*margin-top: 20px;*/
 }
 
+img.userPic{
+  border-radius: 50px;
+  height:100px;
+  width:100px;
+  border: 1px solid $purple;
+  box-shadow: 2px 2px 5px  rgba(0,0,0,0.8);
+  display: block;
+  margin: 0 auto;
+}
+/*----------LeftPage END----------*/
+/*---------Home Loged In---------*/
+/*views/scoreboards/show*/
+.views.scoreboard.show{
+  color:white;
+  /*width:86%;*/
+  margin-right:2%;
+  margin-left:2%;
+ /* border:solid black 1px;*/
+  padding:10px;
+}
+.views.scoreboard.show h1{
+  font-size: 2.7em;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top:20px;
+}
+.Breakline{
+  background-color: $purple;
+  height:2px;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-bottom: 10px;
+}
+.views.scoreboard.show .dayPoints{
+  margin-right:3%;
+  margin-left:3%;
+  padding:10px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  /*border:solid black 1px;*/
+  font-size: 2em;
+  font-weight: 300;
+}
+.views.scoreboard.show .dayPoints li{
+  margin-bottom: 10px;
+}
+.dayPoints span{
+  font-weight: 400;
+}
+/*views/scorboards/scoreboard_challenges*/
+
+.views.scorboards.scoreboard_challenges{
+  /*width:86%;*/
+  color:white;
+  margin-right:3%;
+  margin-left:3%;
+  /*border:solid black 1px;*/
+  padding:10px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+/*---------Home Loged In END---------*/
+.home{
+  background: url(homeBgPlaceHolder.jpg);
+  background-size: cover;
+  height: 500px;
+}
 .beforeSwipeLeft{
   float:left;
-  background-color: rgba(255,255,255,0.8);
-  width:95%;
-  height:1000px;
-  margin-top: 10px;
+  background: url(homeBgPlaceHolder.jpg);
+  background-size: cover;
+  height: 500px;
+  /*background-color: rgba(255,255,255,0.5);*/
+  width:100%;
+  /*margin-top: 10px;*/
   margin-left: -100%;
   transition: margin-left 0.5s;
   -webkit-transition: margin-left 0.5s;
 }
 
 .beforeSwipeLeft p, .beforeSwipeRight p{
-  color:black;
+  color:white;
 }
 
 .leftPage{
@@ -197,12 +314,16 @@ body{
 }
 
 .beforeSwipeRight{
+  color:white;
   float:right;
-  background-color: rgba(255,255,255,0.8);
-  width:95%;
-  margin-left: 5%;
+  /*background-color: rgba(0,0,0,0.5);*/
+  background: url(homeBgPlaceHolder.jpg);
+  background-size: cover;
+  height: 500px;
+  width:100%;
+  /*margin-left: 5%;*/
   height:1000px;
-  margin-top: 10px;
+  /*margin-top: 10px;*/
   margin-right: -100%;
   transition: margin-right 0.5s;
   -webkit-transition: margin-right 0.5s;

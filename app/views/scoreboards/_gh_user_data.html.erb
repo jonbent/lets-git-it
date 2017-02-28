@@ -1,0 +1,15 @@
+
+<div class="views scoreboard gh_user_data">
+  <img class="userPic" src="<%= current_user.picture_url %>" alt="Smiley face">
+<h1><%= current_user.username %></h1>
+<div class="Breakline"></div>
+  <div class="gitInfo">
+    <ul>
+   	 	<li>Your email: <span><%= current_user.user_hash['extra']['raw_info']['email'] %></span></li>
+   	 	<li>Total private repos: <span><%=  current_user.user_hash['extra']['raw_info']['total_private_repos'] %></span></li>
+   	 	<li>Total public repos: <span><%=  current_user.user_hash['extra']['raw_info']['public_repos'] %></span></li>
+    <ul>
+   </div>
+</div>
+
+

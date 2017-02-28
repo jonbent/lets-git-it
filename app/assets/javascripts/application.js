@@ -58,6 +58,7 @@ $(document).ready(function(){
      }
   });//End RightPage slider
 
+  addNoteToDatabase()
 });//END DOCUMENT READY
 
 
@@ -72,4 +73,22 @@ function homeAfterRight(){
     setTimeout(function(){
     $('#home').removeClass("afterSwipeRightHome");
     }, 400);
+}
+
+var addNoteToDatabase = function(){
+  $('.note-form').on('submit', function(event){
+    event.preventDefault();
+    debugger;
+    var data = $(this).serialize()
+    $(this).children().val('')
+    var method = $(this).attr('method')
+    var url = $(this).attr('action')
+    $.ajax({
+      method: method,
+      url: url,
+      data: data
+    }).done(function(response){
+      alert('Note successfully created')
+    })
+  })
 }
