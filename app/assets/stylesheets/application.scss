@@ -115,7 +115,7 @@ a{
 }
 /*---------NAV BAR START-------*/
 nav.xheader {
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.0);
   height:60px;
 }
 
@@ -160,18 +160,46 @@ nav.xheader  li.gitLi{
   font-weight: 600;
   margin-top:5px;
 }
-/*---------NAV BAR START-------*/
+/*---------NAV BAR END-------*/
+
+/*----------LeftPage START----------*/
+
+.leftPage .backGroundFadeLeft{
+background-color: rgba(255,255,255,0.9);
+height:500px;
+}
+
+.views.users.index{
+  width:86%;
+  margin-right:7%;
+  margin-left:7%;
+  border:solid black 1px;
+  padding:10px;
+  /*margin-top: 20px;*/
+}
+
+.userPic{
+  border-radius: 50px;
+  height:100px;
+  width:100px;
+  border: 1px solid #8750a1;
+  box-shadow: 2px 2px 5px  rgba(0,0,0,0.8);
+}
+/*----------LeftPage END----------*/
 
 .home{
-  background-color: red;
+  background: url(homeBgPlaceHolder.jpg);
+  background-size: cover;
   height: 500px;
 }
 .beforeSwipeLeft{
   float:left;
-  background-color: rgba(0,0,0,0.5);
-  width:95%;
-  height:1000px;
-  margin-top: 10px;
+  background: url(coding1.jpg);
+  background-size: cover;
+  height: 500px;
+  /*background-color: rgba(255,255,255,0.5);*/
+  width:100%;
+  /*margin-top: 10px;*/
   margin-left: -100%;
   transition: margin-left 0.5s;
   -webkit-transition: margin-left 0.5s;

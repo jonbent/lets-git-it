@@ -1,5 +1,6 @@
+<!-- views/scoreboards/show -->
 <article id="home" class="home">
-
+<div class="views scoreboard show">
 <h1>Daily Scoreboard</h1>
 
 
@@ -12,5 +13,6 @@ Commits: <%=current_scoreboard.commits%>
 <% if @scoreboard.challenges %>
 	<%= render "scoreboard_challenges"%>
 <% end %>
+</div>
 <%#= render "users/ee_buttons" %>
 </article>
