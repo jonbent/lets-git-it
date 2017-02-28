@@ -4,12 +4,14 @@ class HomesController < ApplicationController
   def index
     # @current_user ||= User.find_by_id(session[:user])
 
-    # client = Octokit::Client.new(:access_token => "")
-    #
-    #
-    #
-    # user = Octokit.user client.login
-    #
+    client = Octokit::Client.new(client_id: ENV['GITHUB_KEY'], client_secret: ENV['GITHUB_SECRET'])
+    user = client.user 'georgebabayan'
+    user.login
+    # p client
+    # p "@@" * 30
+    # @github_response = client
+    # @avatar = @github_response[:avatar_url]
+
     # # Get the repos rel, returned from the API
     # # as repos_url in the resource
     # user.rels[:repos].href
@@ -20,6 +22,6 @@ class HomesController < ApplicationController
     # # => "faraday-zeromq"
 
 
-    # @github_response = repos
+    # @github_response = user
   end
 end
