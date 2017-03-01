@@ -7,7 +7,6 @@ class ScoreboardsController < ApplicationController
 	def create
 		@scoreboard = Scoreboard.find_or_create_by(user_id: current_user.id, day: scoreboard_params[:day], week: scoreboard_params[:week])
 		@scoreboard.challenges = Challenge.where(week: @scoreboard.week.to_i, day: @scoreboard.day.capitalize)
-		session[:scoreboard_id] = @scoreboard.id
 		redirect_to @scoreboard
 	end
 
@@ -20,7 +19,7 @@ class ScoreboardsController < ApplicationController
 	end
 
 	def update
-		@scoreboard = current_scoreboard
+		@scoreboard = Scoreboard.find(params[:id])
 		@scoreboard.score(1)
 		@scoreboard.save
 		if request.xhr?
@@ -33,7 +32,7 @@ class ScoreboardsController < ApplicationController
 	def download
 		path = "notes_for_day.txt"; array=[]
 
-		current_scoreboard.notes.each do |element|
+		@scoreboard.notes.each do |element|
 			array << "TITLE: "
 			array << element.title
 
