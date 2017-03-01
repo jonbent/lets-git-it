@@ -1,0 +1,1 @@
+["Cheering Mascot", "Roman Numerals", "Debugging Drill: Use A REPL", "Debugging Drill: Read the Error", "Design Drill: Code Style", "Design Drill: Method Chaining"]
