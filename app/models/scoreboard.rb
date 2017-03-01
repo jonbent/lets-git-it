@@ -3,6 +3,7 @@ class Scoreboard < ApplicationRecord
   has_many :challenges
   has_many :notes
 
+  after_create :init
   def phase
   	if self.week < 4
   		phase = 1
