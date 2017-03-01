@@ -19,6 +19,14 @@ class ChallengesController < ApplicationController
 		redirect_to scoreboard_challenges_path(@scoreboard)
 	end
 
+	def update
+		@scoreboard = Scoreboard.find(params[:scoreboard_id])
+		@challenge = Challenge.find(params[:id])
+		if request.xhr?
+			@challenge.completed_release
+			@challenge.save
+		end
+	end
 
 	private
 	def challenge_params

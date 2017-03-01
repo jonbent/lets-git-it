@@ -59,6 +59,7 @@ $(document).ready(function(){
 
   addNoteToDatabase()
   addEngineeringEmpathyPoint();
+  completeChallengeRelease();
 });//END DOCUMENT READY
 
 
@@ -102,6 +103,16 @@ var addEngineeringEmpathyPoint = function(){
       url: url
     }).done(function(response){
       $('#points-container').html(response);
+    })
+  })
+}
+
+var completeChallengeRelease = function(){
+  $('.release-checkbox').on('click', function(event){
+    var url = $(this).parent().attr('action')
+    $.ajax({
+      url: url,
+      method: "PATCH"
     })
   })
 }
