@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get "scoreboards/download"  => 'scoreboards#download'
   get "scoreboards/leaderboard",  as: 'leaderboard'
+  get "users/update_week" => 'users#update_week'
+  get "users/update_cohort" => 'users#update_cohort'
   resources :users, only: [:index, :edit, :destroy, :create, :show]
 
   resources :scoreboards do
