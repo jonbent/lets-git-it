@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require_tree .
 
-
 $(document).ready(function(){
 
   var homeSlide = document.getElementById('home');
@@ -98,8 +97,6 @@ var addEngineeringEmpathyPoint = function(){
   $('.ee-btns').on('click', function(event){
     event.preventDefault()
     var url = $(this).attr('action')
-    console.log(url);
-    var data = 1
     $.ajax({
       method: 'patch',
       url: url

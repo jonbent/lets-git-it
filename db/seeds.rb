@@ -945,7 +945,7 @@ challenges = [
 
 
 u = User.create(username: "George Maffin", phase: 2, cohort: "Squirrels",
- total_points: 54, number_commits: 10)
+ total_points: 54, number_commits: 10, picture_url: "https://avatars2.githubusercontent.com/u/20651552?v=3&s=460")
 days=['Monday','Friday','Wednesday','Tuesday','Thursday']
 
 15.times do
