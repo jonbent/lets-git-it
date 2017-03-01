@@ -1,0 +1,11 @@
+<%= @user.username %> <br><br><br>
+
+
+
+TOTAL DAY POINTS: <%= @total_days_points %> <br>
+AVERAGE POINTS PER DAY: <%= @total_days_points / @user_scoreboards.size %> <br>
+TOTAL COMMITS: <%= @total_commits %> <br>
+AVERAGE COMMITS PER DAY: <%= @total_commits / @user_scoreboards.size %> <br><br>
+
+
+<%= pie_chart @user_scoreboards.group(:day).sum(:week) , width: "500px", height: "200px" %>

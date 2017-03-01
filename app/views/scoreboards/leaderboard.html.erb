@@ -1,6 +1,4 @@
-<h1>
-	>>>> leaderboard <<<<
- </h1>
+<h1> Leaderboard </h1>
 
 <table>
 	<tr>
@@ -11,18 +9,16 @@
 		<th>Commits</th>
 		<br>
 	</tr>
-
-		<% @users.each do |user| %>
-		<tr>
-			<% if user.picture_url.nil? %>
-				 	<%   user.picture_url = "http://www.brunningonline.net/simon/blog/archives/South%20Park%20Avatar.jpg"%>
-		 <% end %>
-			<td><img src="<%= user.picture_url %>" alt="schema.png" height="100" width="100"></td>
-			<td><%= user.username %></td>
-			<td><%= user.cohort %></td>
-			<td><%= user.total_points %></td>
-			<td><%= user.number_commits %></td>
-		</tr>
+	<% @users.each do |user| %>
+	<tr>
+		<% if user.picture_url.nil? %>
+			<%  user.picture_url = "http://www.brunningonline.net/simon/blog/archives/South%20Park%20Avatar.jpg"%>
 		<% end %>
-
+		<td><img src="<%= user.picture_url %>" alt="schema.png" height="100" width="100"></td>
+		<td><%= link_to "#{user.username}", user_path(user)%></td>
+		<td><%= user.cohort %></td>
+		<td><%= user.total_points %></td>
+		<td><%= user.number_commits %></td>
+	</tr>
+	<% end %>
 </table>
