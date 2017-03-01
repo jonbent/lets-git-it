@@ -19,15 +19,4 @@ module SessionsHelper
     redirect_to :root unless logged_in?
   end
 
-  def valid_scoreboard
-    scoreboard = Scoreboard.where(id: session[:scoreboard_id])
-    !scoreboard.empty?
-  end
-
-  def current_scoreboard
-    if valid_scoreboard
-      @current_scoreboard ||= Scoreboard.find(session[:scoreboard_id])
-    end
-  end
-
 end

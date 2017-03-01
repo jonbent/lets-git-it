@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :edit, :destroy, :create, :show]
 
   resources :scoreboards do
-    resources :challenges, only:[:index, :create, :new]
+    resources :challenges, only:[:index, :create, :new, :update]
     resources :notes, only:[:index, :create, :new, :show]
   end
 
