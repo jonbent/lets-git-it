@@ -1,4 +1,5 @@
 class ScoreboardsController < ApplicationController
+
 	def new
 		@scoreboard = Scoreboard.new
 	end

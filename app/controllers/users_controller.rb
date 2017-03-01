@@ -4,4 +4,11 @@ class UsersController < ApplicationController
 		@scoreboard = current_scoreboard
 	end
 
+	def show
+		@user = User.find(params[:id])
+	  @user_scoreboards = @user.scoreboards
+		@total_days_points = @user_scoreboards.map(&:day_points).reduce(:+)
+		@total_commits = @user_scoreboards.map(&:commits).reduce(:+)
+	end
+
 end
