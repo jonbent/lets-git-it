@@ -23,12 +23,8 @@ class ScoreboardsController < ApplicationController
 
 	def update
 		@scoreboard = current_scoreboard
-		# @scoreboard.score(1)
-		@scoreboard.update_attributes(day_points: @scoreboard.day_points + 1)
-		p @scoreboard
-		if @scoreboard.save
-			puts "it saved"
-		end
+		@scoreboard.score(1)
+		@scoreboard.save
 		if request.xhr?
 			render partial: 'score_commits', locals: {scoreboard: @scoreboard}
 		else
