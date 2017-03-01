@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require_tree .
 
-
 $(document).ready(function(){
 
   var homeSlide = document.getElementById('home');
