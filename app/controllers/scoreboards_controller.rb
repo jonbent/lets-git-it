@@ -1,6 +1,6 @@
 class ScoreboardsController < ApplicationController
-
-
+	
+	
 	def new
 		@scoreboard = Scoreboard.new
 	end
@@ -12,10 +12,14 @@ class ScoreboardsController < ApplicationController
 		if @scoreboard.save
 			session[:scoreboard_id] = @scoreboard.id
 			redirect_to @scoreboard
-		else
+		else 
 			flash[:failure] = "Couldn't start your game"
 			render :'new'
 		end
+	end
+
+	def leaderboard
+		@users = User.where.not(total_points: nil).order(total_points: :desc).limit(10)
 	end
 
 	def show
@@ -26,7 +30,6 @@ class ScoreboardsController < ApplicationController
 		@scoreboard = current_scoreboard
 		@scoreboard.score(1)
 		@scoreboard.save
-		
 		if request.xhr?
 			render partial: 'score_commits', locals: {scoreboard: @scoreboard}
 		else
@@ -35,21 +38,26 @@ class ScoreboardsController < ApplicationController
 	end
 
 	def download
-		path = "path.txt"; array=[]
+		path = "notes_for_day.txt"; array=[]
 
-		current_scoreboard.challenges.each do |element|
+		current_scoreboard.notes.each do |element|
+			array << "TITLE: "
 			array << element.title
+
+			array << "BODY: "
+			array << element.body
 		end
+
 
 		File.open(path, "w+") do |f|
 		  f.write(array)
 		end
 
-		send_file "path.txt"
+
+		send_file "notes_for_day.txt"
 	end
 
 	private
-
 	def scoreboard_params
 		params.require(:scoreboard).permit(:day, :week, :cohort)
 	end

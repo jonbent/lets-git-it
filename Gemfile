@@ -47,6 +47,15 @@ gem 'omniauth-github'
 #Gem for github App calls from ruby
 # gem 'github_api'
 
+#help create charts
+gem "chartkick"
+
+#gem to group date
+gem 'groupdate'
+
+gem 'highcharts-rails'
+
+
 #One more api - gem for
 gem 'octokit', '~> 4.0'
 

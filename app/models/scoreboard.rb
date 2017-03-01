@@ -26,9 +26,10 @@ class Scoreboard < ApplicationRecord
   end
 
   def init
-    self.day_points = 0
-    self.commits = 0
+      self.day_points = 0
+      self.commits = 0
   end
+
 
   def score(points)
     self.day_points += points

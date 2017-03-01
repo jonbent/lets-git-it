@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   root 'scoreboards#new'
 
   get "scoreboards/download"  => 'scoreboards#download'
-  resources :users, only: [:index, :edit, :destroy, :create]
+  get "scoreboards/leaderboard",  as: 'leaderboard'
+  resources :users, only: [:index, :edit, :destroy, :create, :show]
 
   resources :scoreboards do
     resources :challenges, only:[:index, :create, :new]
