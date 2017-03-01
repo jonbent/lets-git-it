@@ -8,13 +8,8 @@ class ScoreboardsController < ApplicationController
 	def create
 		@scoreboard = Scoreboard.find_or_create_by(user_id: current_user.id, day: scoreboard_params[:day], week: scoreboard_params[:week])
 		@scoreboard.challenges = Challenge.where(week: @scoreboard.week.to_i, day: @scoreboard.day.capitalize)
-		# if @scoreboard.save
 		session[:scoreboard_id] = @scoreboard.id
 		redirect_to @scoreboard
-		# else
-		# 	flash[:failure] = "Couldn't start your game"
-		# 	render :'new'
-		# end
 	end
 
 	def show
