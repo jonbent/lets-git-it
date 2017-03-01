@@ -5,7 +5,6 @@
   <h1>Ah Ha</h1>
   <div class='notes-container'>
     <% if @scoreboard.id%>
-    <% p @scoreboard %>
       <div class="Breakline"></div>
       <%= form_for [@scoreboard, @note], :html => {:class => "note-form"} do |f| %>
 
