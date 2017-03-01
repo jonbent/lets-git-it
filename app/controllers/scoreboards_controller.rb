@@ -4,16 +4,10 @@ class ScoreboardsController < ApplicationController
 	end
 
 	def create
-		@scoreboard = Scoreboard.new(scoreboard_params)
-		@scoreboard.init
+		@scoreboard = Scoreboard.find_or_create_by(user_id: current_user.id, day: scoreboard_params[:day], week: scoreboard_params[:week])
 		@scoreboard.challenges = Challenge.where(week: @scoreboard.week.to_i, day: @scoreboard.day.capitalize)
-		if @scoreboard.save
-			session[:scoreboard_id] = @scoreboard.id
-			redirect_to @scoreboard
-		else
-			flash[:failure] = "Couldn't start your game"
-			render :'new'
-		end
+		session[:scoreboard_id] = @scoreboard.id
+		redirect_to @scoreboard
 	end
 
 	def leaderboard
@@ -28,7 +22,6 @@ class ScoreboardsController < ApplicationController
 		@scoreboard = current_scoreboard
 		@scoreboard.score(1)
 		@scoreboard.save
-
 		if request.xhr?
 			render partial: 'score_commits', locals: {scoreboard: @scoreboard}
 		else
