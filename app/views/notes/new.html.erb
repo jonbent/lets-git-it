@@ -1,6 +1,7 @@
 <!-- views/notes/new -->
 
 <article class="xviews xnotes xnew">
+  <div class="allNotes">
   <h1>Ah Ha</h1>
   <div class='notes-container'>
 
@@ -10,8 +11,8 @@
       <%= f.text_field :title  %><br>
       <%= f.label :body, "What I learned" %>
       <%= f.text_field :body %><br>
-      <%= f.hidden_field :note_type, value: 'a' %><br>
-      <%= f.hidden_field :scoreboard_id, value: "#{@scoreboard.id}" %><br>
+      <%= f.hidden_field :note_type, value: 'a' %>
+      <%= f.hidden_field :scoreboard_id, value: "#{@scoreboard.id}" %>
       <%= f.submit %>
     <% end %>
   </div>
@@ -24,8 +25,8 @@
       <%= f.text_field :title %><br>
       <%= f.label :body, "Embrace confusion" %>
       <%= f.text_field :body %><br>
-      <%= f.hidden_field :note_type, value: 'b' %><br>
-      <%= f.hidden_field :scoreboard_id, value: "#{@scoreboard.id}" %><br>
+      <%= f.hidden_field :note_type, value: 'b' %>
+      <%= f.hidden_field :scoreboard_id, value: "#{@scoreboard.id}" %>
       <%= f.submit %>
     <% end %>
   </div>
@@ -39,9 +40,10 @@
       <%= f.text_field :title %><br>
       <%= f.label :body, "ASK Feedback" %>
       <%= f.text_field :body %><br>
-      <%= f.hidden_field :note_type, value: 'f' %><br>
-      <%= f.hidden_field :scoreboard_id, value: "#{@scoreboard.id}" %><br>
+      <%= f.hidden_field :note_type, value: 'f' %>
+      <%= f.hidden_field :scoreboard_id, value: "#{@scoreboard.id}" %>
       <%= f.submit %>
     <% end %>
   </div>
+</div><!-- END All Notes -->
 </article>
