@@ -1,6 +1,4 @@
-<h1>
-	>>>> leaderboard <<<<
-</h1>
+<h1> Leaderboard </h1>
 
 <table>
 	<tr>
@@ -11,7 +9,6 @@
 		<th>Commits</th>
 		<br>
 	</tr>
-
 	<% @users.each do |user| %>
 	<tr>
 		<% if user.picture_url.nil? %>
@@ -24,5 +21,4 @@
 		<td><%= user.number_commits %></td>
 	</tr>
 	<% end %>
-
 </table>

@@ -17,7 +17,6 @@
 //= require Chart.bundle
 //= require chartkick
 
-
 $(document).ready(function(){
 
   var homeSlide = document.getElementById('home');
@@ -81,7 +80,7 @@ function homeAfterRight(){
 var addNoteToDatabase = function(){
   $('.note-form').on('submit', function(event){
     event.preventDefault();
-    debugger;
+    // debugger;
     var data = $(this).serialize()
     $(this).children().val('')
     var method = $(this).attr('method')
@@ -100,8 +99,6 @@ var addEngineeringEmpathyPoint = function(){
   $('.ee-btns').on('click', function(event){
     event.preventDefault()
     var url = $(this).attr('action')
-    console.log(url);
-    var data = 1
     $.ajax({
       method: 'patch',
       url: url
@@ -110,3 +107,8 @@ var addEngineeringEmpathyPoint = function(){
     })
   })
 }
+
+// var leftPageButton = function(){
+//    $('#leftPage').removeClass("leftPage", homeAfterLeft());
+
+// }
