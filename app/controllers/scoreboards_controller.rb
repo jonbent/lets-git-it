@@ -1,6 +1,4 @@
 class ScoreboardsController < ApplicationController
-
-
 	def new
 		@scoreboard = Scoreboard.new
 	end
@@ -18,6 +16,10 @@ class ScoreboardsController < ApplicationController
 		end
 	end
 
+	def leaderboard
+		@users = User.where.not(total_points: nil).order(total_points: :desc).limit(10)
+	end
+
 	def show
 		@scoreboard = Scoreboard.find(params[:id])
 	end
@@ -26,7 +28,7 @@ class ScoreboardsController < ApplicationController
 		@scoreboard = current_scoreboard
 		@scoreboard.score(1)
 		@scoreboard.save
-		
+
 		if request.xhr?
 			render partial: 'score_commits', locals: {scoreboard: @scoreboard}
 		else
@@ -49,7 +51,6 @@ class ScoreboardsController < ApplicationController
 	end
 
 	private
-
 	def scoreboard_params
 		params.require(:scoreboard).permit(:day, :week, :cohort)
 	end
