@@ -17,7 +17,6 @@
 //= require Chart.bundle
 //= require chartkick
 
-
 $(document).ready(function(){
 
   var homeSlide = document.getElementById('home');
