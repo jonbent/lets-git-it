@@ -78,7 +78,7 @@ function homeAfterRight(){
 var addNoteToDatabase = function(){
   $('.note-form').on('submit', function(event){
     event.preventDefault();
-    debugger;
+    // debugger;
     var data = $(this).serialize()
     $(this).children().val('')
     var method = $(this).attr('method')
@@ -105,3 +105,8 @@ var addEngineeringEmpathyPoint = function(){
     })
   })
 }
+
+// var leftPageButton = function(){
+//    $('#leftPage').removeClass("leftPage", homeAfterLeft());
+
+// }
