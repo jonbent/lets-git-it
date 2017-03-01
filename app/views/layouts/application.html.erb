@@ -21,7 +21,7 @@
 
     <div id="leftPage" class="beforeSwipeLeft">
       <div class="backGroundFadeLeft">
-        <% if valid_scoreboard %>
+        <% if @scoreboard %>
           <%= render template: 'users/index'%>
         <% end %>
       </div>
@@ -29,10 +29,10 @@
 
     <div id="rightPage" class="beforeSwipeRight">
         <div class="backGroundFade">
-          <% if valid_scoreboard %>
-            <% @scoreboard = current_scoreboard %>
+          <% if @scoreboard %>
+            <% @scoreboard = @scoreboard %>
             <% @note = Note.new %>
-            <%= render template:"notes/new", locals:{scoreboard_id: current_scoreboard.id, scoreboard: current_scoreboard}%>
+            <%= render template:"notes/new", locals:{scoreboard_id: @scoreboard.id, scoreboard: @scoreboard}%>
           <% end %>
         </div>
       </div>

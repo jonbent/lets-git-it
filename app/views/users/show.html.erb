@@ -1,11 +1,63 @@
+
+
 <%= @user.username %> <br><br><br>
 
+TOTAL DAY POINTS: <%= @user.total_days_points %> <br>
+<% if !@user_scoreboards.size.zero? %>
+  AVERAGE POINTS PER DAY: <%= (@user.total_days_points) / (@user_scoreboards.size) %> <br>
+<% else  %>
+  AVERAGE POINTS PER DAY: 0 <br>
+<% end %>
 
-
-TOTAL DAY POINTS: <%= @total_days_points %> <br>
-AVERAGE POINTS PER DAY: <%= @total_days_points / @user_scoreboards.size %> <br>
 TOTAL COMMITS: <%= @total_commits %> <br>
-AVERAGE COMMITS PER DAY: <%= @total_commits / @user_scoreboards.size %> <br><br>
+
+<% if !@user_scoreboards.size.zero? %>
+  AVERAGE COMMITS PER DAY: <%= (@total_commits) / (@user_scoreboards.size ) %> <br><br>
+<% else  %>
+  AVERAGE COMMITS PER DAY: 0 <br>
+<% end %>
+
+LEVEL: <%= @user.level %><br>
+EXP: 100/<%= @user.level_extra %>%
 
 
-<%= pie_chart @user_scoreboards.group(:day).sum(:week) , width: "500px", height: "200px" %>
+
+
+<form action="/users/update_week" method="get">
+
+  <select name="users[update_week]" id="post_week_id">
+    <option value="1">Week 1</option>
+    <option value="2">Week 2</option>
+    <option value="3">Week 3</option>
+    <option value="4">Week 4</option>
+    <option value="5">Week 5</option>
+    <option value="6">Week 6</option>
+    <option value="7">Week 7</option>
+    <option value="8">Week 8</option>
+    <option value="9">Week 9</option>
+  </select>
+<input type="submit">
+</form>
+<%= area_chart @user_scoreboards.where({ "week" => @set_week }).group(:day).sum(:day_points) , width: "500px", height: "200px" %>
+
+<form action="/users/update_cohort" method="get">
+  <select name="users[update_cohort]" id="post_week_id">
+    <option value="Squirrels">Squirrels</option>
+    <option value="Otters">Otters</option>
+  </select>
+<input type="submit">
+</form>
+
+<%= area_chart @user_scoreboards.where({ "cohort" => @set_cohort }).group(:day).sum(:day_points) , width: "500px", height: "200px",colors: ["pink", "#999"] %>
+
+
+
+
+
+
+
+
+
+
+<!-- <%= options_for_select([['Lisbon', 1], ['Madrid', 2]]) %> -->
+<!-- <%= area_chart @user_scoreboards.group(:day).sum(:day_points) , width: "500px", height: "200px",colors: ["pink", "#999"] %> -->

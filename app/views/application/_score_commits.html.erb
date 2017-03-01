@@ -1,2 +1,7 @@
+<% if logged_in? %>
+	<%= render partial: "gh_user_data" %>
+  <p>Level: <%=current_user.level%></p>
+  <p>Total Score: <%=current_user.total_days_points%></p>
+<% end %>
 <p>Score: <%=scoreboard.day_points%></p>
 <p>Commits: <%#scoreboard.commits%></p>
