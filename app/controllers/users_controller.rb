@@ -9,55 +9,32 @@ class UsersController < ApplicationController
 		@total_commits = @user_scoreboards.map(&:commits).reduce(:+)
 		@user_scoreboards = 1 if (@user_scoreboards.nil?)
 		@total_commits = 1 if (@total_commits.nil?)
-
-
-		@chart = Fusioncharts::Chart.new({
-        width: "600",
-        height: "400",
-        type: "mscolumn2d",
-        renderAt: "chartContainer",
-        dataSource: {
-            chart: {
-            caption: "Comparison of Quarterly Revenue",
-            subCaption: "Harry's SuperMart",
-            xAxisname: "Quarter",
-            yAxisName: "Amount ($)",
-            numberPrefix: "$",
-            theme: "fint",
-            exportEnabled: "1",
-            },
-            categories: [{
-                    category: [
-                        { label: "Q1" },
-                        { label: "Q2" },
-                        { label: "Q3" },
-                        { label: "Q4" }
-                    ]
-                }],
-                dataset: [
-                    {
-                        seriesname: "Previous Year",
-                        data: [
-                            { value: "10000" },
-                            { value: "11500" },
-                            { value: "12500" },
-                            { value: "15000" }
-                        ]
-                    },
-                    {
-                        seriesname: "Current Year",
-                        data: [
-                            { value: "25400" },
-                            { value: "29800" },
-                            { value: "21800" },
-                            { value: "26800" }
-                        ]
-                    }
-              ]
-        }
-    })
-
-
 	end
+
+	def update_week
+		@user = current_user
+		#WE NEED TO SET from 'User.find(36)' TO 'CURRENT_USER'
+		@user_scoreboards = @user.scoreboards
+		@total_commits = @user_scoreboards.map(&:commits).reduce(:+)
+		@user_scoreboards = 1 if (@user_scoreboards.nil?)
+		@total_commits = 1 if (@total_commits.nil?)
+		@set_week = params[:users][:update_week]
+		render 'users/show'
+	end
+
+	def update_cohort
+		@user = current_user
+		#WE NEED TO SET TO CURRENT USER
+		@user_scoreboards = @user.scoreboards
+		@total_commits = @user_scoreboards.map(&:commits).reduce(:+)
+		@user_scoreboards = 1 if (@user_scoreboards.nil?)
+		@total_commits = 1 if (@total_commits.nil?)
+
+
+
+		@set_cohort = params[:users][:update_cohort]
+		render 'users/show'
+	end
+
 
 end
