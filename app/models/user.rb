@@ -4,9 +4,11 @@ class User < ApplicationRecord
   serialize :user_hash, JSON
 
   def init
-    # self.number_commits = 0
-    # self.total_points = 0
-    # self.user_hash = {}
+	  if !number_commits && !total_points
+	    self.number_commits = 0
+	    self.total_points = 0
+	    # self.user_hash = {}
+	  end  
   end
 
   def total_days_points
@@ -18,6 +20,7 @@ class User < ApplicationRecord
   end
 
   def level
+  	# level = Math.sqrt(self.total_points).floor
     return 0 if (self.total_days_points).nil?
 
     if self.total_days_points > 300
