@@ -9,29 +9,33 @@ class User < ApplicationRecord
     # self.user_hash = {}
   end
 
-  def all_user_points
-    self.scoreboards.map(&:day_points).reduce(:+)
+  def total_days_points
+		if self.scoreboards.size.zero?
+			return 0
+		else
+			self.scoreboards.map(&:day_points).reduce(:+)
+		end
   end
 
   def level
-    return 0 if (self.all_user_points).nil?
+    return 0 if (self.total_days_points).nil?
 
-    if self.all_user_points > 300
+    if self.total_days_points > 300
       return 4
-    elsif self.all_user_points > 150
+    elsif self.total_days_points > 150
       return 3
-    elsif self.all_user_points > 50
+    elsif self.total_days_points > 50
       return 2
-    elsif self.all_user_points > 10
+    elsif self.total_days_points > 10
       return 1
-    elsif self.all_user_points < 10
+    elsif self.total_days_points < 10
       return 0
     end
   end
 
   def level_extra
-    return 0 if (self.all_user_points).nil?
-    score = self.all_user_points
+    return 0 if (self.total_days_points).nil?
+    score = self.total_days_points
 
     if score > 300
       return (score - 300) / 3
