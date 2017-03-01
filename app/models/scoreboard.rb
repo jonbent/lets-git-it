@@ -3,6 +3,8 @@ class Scoreboard < ApplicationRecord
   has_many :challenges
   has_many :notes
 
+  after_initialize :init
+
   def phase
   	if self.week < 4
   		phase = 1
@@ -26,8 +28,10 @@ class Scoreboard < ApplicationRecord
   end
 
   def init
+    if !day_points && !commits
       self.day_points = 0
       self.commits = 0
+    end
   end
 
 

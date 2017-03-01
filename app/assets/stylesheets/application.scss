@@ -213,6 +213,72 @@ img.userPic{
   margin: 0 auto;
 }
 /*----------LeftPage END----------*/
+
+
+
+
+
+
+
+
+
+
+/*-----------Right Page---------- */
+.allNotes{
+  border:red solid 2px;
+  margin-right:3%;
+  margin-left:3%;
+  font-weight: 300;
+  /*font-size: 2em;*/
+}
+.allNotes h1{
+  font-size: 2.7em;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.allNotes .notes-container{
+  font-size: 1.5em;
+  border:1px solid red;
+  padding:10px;
+  margin-right: 2%;
+  margin-left: 2%;
+}
+
+.notes-container input[type=text]{
+  background-color: rgba(255,255,255,0.2);
+  color:white;
+  border:none;
+}
+
+.notes-container input[type=submit]{
+}
+
+.downLoadNotes{
+text-align: center;
+background-color: red;
+margin-right: 10%;
+margin-left: 10%;
+
+}
+
+.downLoadNotes a{
+  text-align: center;
+  color: white;
+}
+/*-----------Right Page END---------- */
+
+
+
+
+
+
+
+
+
+
+
 /*---------Home Loged In---------*/
 /*views/scoreboards/show*/
 .views.scoreboard.show{
