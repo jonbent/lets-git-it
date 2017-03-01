@@ -3,11 +3,6 @@
 <!-- <h1>Let's Git It!</h1> -->
 <div class="views users index">
 
-<% if logged_in? %>
-	<p>Level: <%=current_user.level%></p>
-	<p>Total Score: <%=current_user.total_days_points%></p>
-	<%= render partial: "gh_user_data" %>
-<% end %>
 <% if @scoreboard %>
 	<div id="points-container">
 		<%= render partial: "score_commits", locals: {scoreboard: @scoreboard} %>
