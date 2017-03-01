@@ -30,17 +30,23 @@ class ScoreboardsController < ApplicationController
 	end
 
 	def download
-		path = "path.txt"; array=[]
+		path = "notes_for_day.txt"; array=[]
 
-		current_scoreboard.challenges.each do |element|
+		current_scoreboard.notes.each do |element|
+			array << "TITLE: "
 			array << element.title
+
+			array << "BODY: "
+			array << element.body
 		end
+
 
 		File.open(path, "w+") do |f|
 		  f.write(array)
 		end
 
-		send_file "path.txt"
+
+		send_file "notes_for_day.txt"
 	end
 
 	private

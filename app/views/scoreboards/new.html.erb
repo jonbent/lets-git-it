@@ -2,9 +2,14 @@
 
 <!-- <article id="home" class="home"> -->
 <div class="startGamehome">
+
+<% if logged_in? %>
 	<h1>Start a New Game</h1>
 
-  <%=render "form"%>
+	<%=render "form"%>
+<% else %>
+	<h1>Welcome to Let's Git It!</h1>
+	<p> Log in with Git Hub to start a new game.</p>
+<% end %>
 </div>
-
 <!-- </article> -->
