@@ -25,5 +25,7 @@ EXP: 100/<%= @user.level_extra %>%
 
 
 
-<% @@user_scoreboards. %>
-<%= line_chart date, colors: ["pink", "#999"] %>
+<!-- Filename: app/views/dashboard/index.html.erb -->
+
+<h3>My Chart</h3>
+<div id="chartContainer"><%= @chart.render() %></div>
