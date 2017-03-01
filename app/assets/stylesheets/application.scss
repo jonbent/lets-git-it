@@ -224,8 +224,9 @@ img.userPic{
 
 
 /*-----------Right Page---------- */
+
 .allNotes{
-  border:red solid 2px;
+  /*border:red solid 2px;*/
   margin-right:3%;
   margin-left:3%;
   font-weight: 300;
@@ -240,26 +241,71 @@ img.userPic{
 }
 .allNotes .notes-container{
   font-size: 1.5em;
-  border:1px solid red;
+  /*border:1px solid red;*/
   padding:10px;
   margin-right: 2%;
   margin-left: 2%;
+  background-color:rgba(255,255,255,0.3);
+  border-radius: 10px;
 }
 
 .notes-container input[type=text]{
   background-color: rgba(255,255,255,0.2);
   color:white;
   border:none;
+  box-shadow: 0px 0px 1px $purple;
+  border-radius: 2px;
 }
 
 .notes-container input[type=submit]{
+  /*outline: none;*/
+  color:white;
+  border:$purple 1px solid;
+  background-color: rgba(128,0,128,1);
+  border-radius: 5px;
+  font-size: 0.7em;
+
+  /*box-shadow: 0px 0px 10px $purple;*/
+}
+
+.notes-container input[type=text]:focus{
+  outline: none;
+  border:$purple;
+  box-shadow: 0px 0px 10px $purple;
+
+}
+
+textarea#note_body{
+  margin-top: 10px;
+  background-color: rgba(255,255,255,0.2);
+  color:white;
+  border:none;
+  box-shadow: 0px 0px 1px $purple;
+  border-radius: 2px;
+  width:80%;
+  height:100px;
+}
+textarea#note_body:focus{
+  outline: none;
+  border:$purple;
+  box-shadow: 0px 0px 10px $purple;
+}
+
+
+.notesSubjectFeild{
+  margin-bottom: 20px;
 }
 
 .downLoadNotes{
 text-align: center;
-background-color: red;
+/*background-color: rgba(128,0,128,0.7);*/
+background-color: $purple;
 margin-right: 10%;
 margin-left: 10%;
+font-size: 1.5em;
+border:1px solid $purple;
+border-radius: 5px;
+margin-top: 15px;
 
 }
 
@@ -267,6 +313,7 @@ margin-left: 10%;
   text-align: center;
   color: white;
 }
+
 /*-----------Right Page END---------- */
 
 
@@ -333,15 +380,15 @@ margin-left: 10%;
 }
 /*---------Home Loged In END---------*/
 .home{
-  background: url(homeBgPlaceHolder.jpg);
+  background: url(xspace.gif);
   background-size: cover;
-  height: 500px;
+  /*height: 500px;*/
 }
 .beforeSwipeLeft{
   float:left;
-  background: url(homeBgPlaceHolder.jpg);
+  background: url(xspace.gif);
   background-size: cover;
-  height: 500px;
+  /*height: 500px;*/
   /*background-color: rgba(255,255,255,0.5);*/
   width:100%;
   /*margin-top: 10px;*/
@@ -383,9 +430,9 @@ margin-left: 10%;
   color:white;
   float:right;
   /*background-color: rgba(0,0,0,0.5);*/
-  background: url(homeBgPlaceHolder.jpg);
+  background: url(xspace.gif);
   background-size: cover;
-  height: 500px;
+  /*height: 500px;*/
   width:100%;
   /*margin-left: 5%;*/
   height:1000px;
