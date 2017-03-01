@@ -3,7 +3,7 @@ class ChallengesController < ApplicationController
 	@day = "week1wed"
 
 	def index
-		@scoreboard = current_scoreboard
+		@scoreboard = Scoreboard.find(params[:scoreboard_id])
 		@challenges = @scoreboard.challenges
 	end
 
