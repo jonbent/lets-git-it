@@ -4,8 +4,8 @@ class User < ApplicationRecord
 	serialize :user_hash, JSON
 
 	def init
-		self.number_commits = 0
-		self.total_points = 0
+		# self.number_commits = 0
+		# self.total_points = 0
 		# self.user_hash = {}
 	end
 

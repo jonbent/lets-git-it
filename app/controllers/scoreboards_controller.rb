@@ -1,6 +1,4 @@
 class ScoreboardsController < ApplicationController
-
-
 	def new
 		@scoreboard = Scoreboard.new
 	end
@@ -10,6 +8,10 @@ class ScoreboardsController < ApplicationController
 		@scoreboard.challenges = Challenge.where(week: @scoreboard.week.to_i, day: @scoreboard.day.capitalize)
 		session[:scoreboard_id] = @scoreboard.id
 		redirect_to @scoreboard
+	end
+
+	def leaderboard
+		@users = User.where.not(total_points: nil).order(total_points: :desc).limit(10)
 	end
 
 	def show
@@ -42,7 +44,6 @@ class ScoreboardsController < ApplicationController
 	end
 
 	private
-
 	def scoreboard_params
 		params.require(:scoreboard).permit(:day, :week, :cohort)
 	end
