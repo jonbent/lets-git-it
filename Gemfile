@@ -63,6 +63,9 @@ gem 'octokit', '~> 4.0'
 #gem for irb consle, changes view for tables
 gem 'hirb'
 
+#This gem is a port of Perl's Data::Faker library that generates fake data.
+gem 'faker'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
