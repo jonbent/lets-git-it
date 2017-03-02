@@ -377,8 +377,48 @@ margin-top: 15px;
   padding:10px;
   background-color: rgba(255,255,255,0.1);
   border-radius: 10px;
+  border:2px solid red;
+}
+
+
+._scoreboard_challenges h1{
+  color:white;
+  font-weight: 300;
+  font-size: 2.7em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+._scoreboard_challenges h2{
+  font-weight: 300;
+  font-size: 2em;
+  margin-top: 50px;
+}
+
+._scoreboard_challenges form{
+  border:2px solid red;
+  padding-left: 20px;
+  font-size: 1.5em;
 }
 /*---------Home Loged In END---------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .home{
   background: url(xspace.gif);
   /*background-size: cover;*/
@@ -386,6 +426,7 @@ margin-top: 15px;
     /*background-position: center;*/
     background-repeat: no-repeat;
     background-size: cover;
+    height:2000px;
     /*background: no-repeat;*/
 /*    height: 100%;
     width:100;*/
@@ -395,6 +436,7 @@ margin-top: 15px;
   float:left;
   background: url(xspace.gif);
   background-size: cover;
+  /*height:2000px;*/
   /*height: 500px;*/
   /*background-color: rgba(255,255,255,0.5);*/
   width:100%;
@@ -439,6 +481,7 @@ margin-top: 15px;
   /*background-color: rgba(0,0,0,0.5);*/
   background: url(xspace.gif);
   background-size: cover;
+  /*height:2000px;*/
   /*height: 500px;*/
   width:100%;
   /*margin-left: 5%;*/

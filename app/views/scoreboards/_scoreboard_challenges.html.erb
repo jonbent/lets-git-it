@@ -1,14 +1,15 @@
-<article class="xviews xchallenges xindex">
+<article class="_scoreboard_challenges">
 <div class="views scorboards scoreboard_challenges">
 	<h1>Challenges</h1>
 	<% @challenges.each do |challenge| %>
-	<h3><%= challenge.title %></h3>
+	<h2><%= challenge.title %></h2>
+	<div class="Breakline"></div>
 	<form action="/scoreboards/<%=@scoreboard.id%>/challenges/<%=challenge.id%>">
-		<input type="button" value="Read Instructions"class="release-checkbox"> <br>
+		<input type="button" class="release-checkbox"> Read Instructions<br>
 		<% challenge.releases.times do |i| %>
-		<input type="button" value="Release <%=i%>" class="release-checkbox"> <br>
+		<input type="button" class="release-checkbox"> Release <%=i%><br>
 		<% end %>
-		<input type="button" value="Make Pull Request" class="release-checkbox">  <br>
+		<input type="button" class="release-checkbox"> Make Pull Request <br>
 	</form>
 	<% end %>
 </div>
