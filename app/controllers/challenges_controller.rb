@@ -24,7 +24,9 @@ class ChallengesController < ApplicationController
 		@challenge = Challenge.find(params[:id])
 		if request.xhr?
 			@challenge.completed_release
+			@scoreboard.score(1)
 			@challenge.save
+			render template: 'scoreboards/show'
 		end
 	end
 

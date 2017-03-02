@@ -116,6 +116,8 @@ var completeChallengeRelease = function(){
     $.ajax({
       url: url,
       method: "PATCH"
+    }).done(function(response){
+      $('#leftPage').html(response)
     })
   })
 }
