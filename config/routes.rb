@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get 'homes/index'
-  root 'scoreboards#new'
+  root 'scoreboards#leaderboard'
 
   get "scoreboards/:id/download"  => 'scoreboards#download'
-  get "scoreboards/leaderboard",  as: 'leaderboard'
+  get "scoreboards/leaderboard" => 'scoreboard#leaderboard'
   get "users/update_week" => 'users#update_week'
   get "users/update_cohort" => 'users#update_cohort'
   resources :users, only: [:index, :edit, :destroy, :create, :show]
