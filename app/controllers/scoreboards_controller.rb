@@ -30,8 +30,7 @@ class ScoreboardsController < ApplicationController
 	end
 
 	def download
-		p params
-		p "@" *30
+		@scoreboard = Scoreboard.find(params[:id])
 		path = "notes_for_day.txt"; array=[]
 		@scoreboard.notes.each do |element|
 			array << "TITLE: "
@@ -41,11 +40,9 @@ class ScoreboardsController < ApplicationController
 			array << element.body
 		end
 
-
 		File.open(path, "w+") do |f|
 		  f.write(array)
 		end
-
 
 		send_file "notes_for_day.txt"
 	end
