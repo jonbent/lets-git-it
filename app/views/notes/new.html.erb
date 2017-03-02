@@ -1,4 +1,5 @@
 <article class="xviews xnotes xnew">
+  <% if @scoreboard && current_user %>
   <div class="allNotes">
   <h1>Ah Ha</h1>
   <div class="Breakline"></div>
@@ -48,6 +49,7 @@
     <% end %>
   </div>
 </div>
+<% end %>
 </article>
 
 <div class="downLoadNotes">
