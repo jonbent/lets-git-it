@@ -43,9 +43,9 @@ class User < ApplicationRecord
     if self.level >= 4
       return (score - 300)
     elsif self.level == 3
-      return ((score - 150) / 3)
+      return ((score - 150) / 3).round(2)
     elsif self.level == 2
-      return ((score - 50) * 1.5)
+      return ((score - 50) / 1.5).round(2)
     elsif self.level == 1
       return ((score - 10) * 2)
     elsif self.level == 0
