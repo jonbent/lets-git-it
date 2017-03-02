@@ -8,7 +8,7 @@ class User < ApplicationRecord
 	    self.number_commits = 0
 	    self.total_points = 0
 	    # self.user_hash = {}
-	  end  
+	  end
   end
 
   def total_days_points
@@ -40,16 +40,16 @@ class User < ApplicationRecord
     return 0 if (self.total_days_points).nil?
     score = self.total_days_points
 
-    if score > 300
-      return (score - 300) / 3
-    elsif score > 150
-      return (score - 150) / 3 * 2
-    elsif score > 50
-      return (score - 50) * 2
-    elsif score > 10
-      return (score - 10) * 10
-    elsif score < 10
-      return score
+    if self.level >= 4
+      return (score - 300)
+    elsif self.level == 3
+      return ((score - 150) * 3)
+    elsif self.level == 2
+      return ((score - 50) * 6)
+    elsif self.level == 1
+      return ((score - 10) * 2)
+    elsif self.level == 0
+      return score / 10
     end
   end
 
