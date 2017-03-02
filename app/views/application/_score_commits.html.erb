@@ -14,18 +14,18 @@
 <!-- /USER CHARTS -->
 
 <div class="scoreInfo">
-	<p>Level: <%=current_user.level%></p>
-	<p>Total Score: <%=current_user.total_days_points%></p>
+	
+	
 	<p>Score: <%=scoreboard.day_points %></p>
-	<p>Average Commits Per Day: <%= (current_user.total_commits) / (current_user.scoreboards.size ) %></p>
 
 	<p>Commits: <%= current_user.total_commits%></p>
+	<p>Average Commits Per Day: <%= (current_user.total_commits) / (current_user.scoreboards.size ) %></p>
+	
+	<p>Level: <%= current_user.level %></p>
+	<p>Total Score: <%=current_user.total_days_points%></p>
+	<p>Experience: <%= current_user.level_extra %></p>
 
 	<div class="chart A">
-
-	<p>	LEVEL: <%= current_user.level %></p>
-	<p>	EXP: <%= current_user.level_extra %></p>
-
 	<% data = [['Level', current_user.level_extra ]]%>
 	<%= bar_chart data, width: "300px", height: "60px", max: 100,colors: ["red", "#999"]%>
 	</div>
