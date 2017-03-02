@@ -106,9 +106,14 @@ $purple: rgb(128,0,128);
 body{
  /* background:url(starry-night-sky.jpg);*/
   color:#7d8485;
-  height:1000px;
+  /*height:1000px;*/
   font-family: 'Roboto Condensed', sans-serif;
 }
+
+.fixSafariOverflow{
+  background-color: #3b3251;
+}
+
 
 a{
   text-decoration: none;
@@ -116,7 +121,7 @@ a{
 }
 /*---------NAV BAR START-------*/
 nav.xheader {
-  background-color: rgba(0,0,0,0.0);
+  background-color: rgba(255,255,255,1);
   height:60px;
 }
 
@@ -163,11 +168,12 @@ nav.xheader  li.gitLi{
 }
 /*---------NAV BAR END-------*/
 
+
 /*----------LeftPage START----------*/
 
 .leftPage .backGroundFadeLeft{
 /*background-color: rgba(255,255,255,0.9);*/
-height:500px;
+/*height:500px;*/
 }
 .views.scoreboard.gh_user_data h1{
   color:white;
@@ -188,6 +194,7 @@ height:500px;
   /*border:solid black 1px;*/
   font-size: 2em;
   font-weight: 300;
+  margin-bottom: 50px;
 }
 .gitInfo li{
   color:white;
@@ -198,9 +205,28 @@ height:500px;
   margin-right:2%;
   margin-left:2%;
   /*border:solid black 1px;*/
+  color:white;
   padding: 10px;
 
   /*margin-top: 20px;*/
+}
+.views.users.index h3{
+  font-size: 2em;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.views.users.index .scoreInfo{
+  /*border:2px solid red;*/
+  margin-right: 6%;
+  margin-right: 6%;
+  padding:10px;
+  padding-left: 20px;
+}
+.views.users.index .scoreInfo p{
+  font-size: 1.5em;
+  font-weight: 300;
+  margin-bottom: 10px;
 }
 
 img.userPic{
@@ -212,15 +238,71 @@ img.userPic{
   display: block;
   margin: 0 auto;
 }
+
+.chart1{
+  /*margin-top: -150px;
+  float:right;*/
+  margin-bottom: 60px;
+
+}
+.chart1 canvas{
+  width:300px;
+  background-color: rgba(255,255,255,0.1);
+  padding:15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  color:red;
+
+}
+@media only screen and (min-width: 820px) {
+    .chart1 {
+      margin-top: -160px;
+      float:right;
+    }
+}
+
+
+
+.eeButtons input{
+  width:80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  height:50px;
+
+}
+.eeButtons input[type=submit]{
+ /* height: 50px;
+  font-size: 2em;*/
+}
+/*input[type=submit].ee-btns{
+color: red;
+}*/
+.ee-btns input[type=submit]{
+  /*color:red;*/
+  padding:10px;
+  color:white;
+  background-color: rgba(255,255,255,0.1);
+  height: 50px;
+  font-size: 1.7em !important;
+  border:none;
+  margin-bottom:50px !important;
+  font-weight: 300;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px black;
+  border:1px solid $purple;
+
+}
+
+.ee-btns input[type=submit]:hover{
+  background-color: rgba(255,255,255,0.3);
+}
+
+/*form#edit_scoreboard_21.ee-btns{
+  height:50px;
+  font-size: 2em;
+}*/
+
 /*----------LeftPage END----------*/
-
-
-
-
-
-
-
-
 
 
 /*-----------Right Page---------- */
@@ -267,7 +349,9 @@ img.userPic{
 
   /*box-shadow: 0px 0px 10px $purple;*/
 }
-
+.notes-container input[type=submit]:hover{
+  background-color: rgba(128,0,128,0.3);
+}
 .notes-container input[type=text]:focus{
   outline: none;
   border:$purple;
@@ -306,6 +390,11 @@ font-size: 1.5em;
 border:1px solid $purple;
 border-radius: 5px;
 margin-top: 15px;
+margin-bottom: 30px;
+
+}
+.downLoadNotes:hover{
+  background-color: rgba(128,0,128,0.3)
 
 }
 
@@ -315,16 +404,6 @@ margin-top: 15px;
 }
 
 /*-----------Right Page END---------- */
-
-
-
-
-
-
-
-
-
-
 
 /*---------Home Loged In---------*/
 /*views/scoreboards/show*/
@@ -371,23 +450,242 @@ margin-top: 15px;
 .views.scorboards.scoreboard_challenges{
   /*width:86%;*/
   color:white;
-  margin-right:3%;
-  margin-left:3%;
+  margin-right:6%;
+  margin-left:6%;
   /*border:solid black 1px;*/
   padding:10px;
   background-color: rgba(255,255,255,0.1);
   border-radius: 10px;
+  /*border:2px solid red;*/
+}
+
+
+._scoreboard_challenges h1{
+  color:white;
+  font-weight: 300;
+  font-size: 2.7em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+._scoreboard_challenges h2{
+  font-weight: 300;
+  font-size: 2em;
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+
+._scoreboard_challenges form{
+  /*border:2px solid green;*/
+  padding:10px;
+  padding-left: 20px;
+  font-size: 1.5em;
+
+}
+
+._scoreboard_challenges input.release-checkbox{
+  background-color:red;
+  border:none;
+  border-radius: 50%;
+  height:25px;
+  width:25px;
+  box-shadow: 2px 2px 0px black;
+}
+
+
+.scoreboard_challenges li{
+  margin-bottom:10px;
+
 }
 /*---------Home Loged In END---------*/
-.home{
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------Home start New Game-------*/
+.startGamehome{
+  height:1000px;
   background: url(xspace.gif);
   background-size: cover;
+ /* border:red 1px solid;*/
+  color: white;
+  font-weight: 300;
+  margin-right: 3%;
+  margin-left: 3%;
+  padding-top: 20px;
+    h1{
+      font-size: 2.8em;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+}
+.newGameForm{
+/*border: red 1px solid;*/
+margin: 0 auto;
+border-radius: 10px;
+box-shadow: 1px 1px 1px black;
+/*margin-right:10%;
+margin-left: 10%;*/
+width:400px ;
+padding:10px;
+padding-top: 20px;
+
+background-color: rgba(255,255,255,0.1);
+  p{
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    padding-left: 20px;
+    /*text-align: center;*/
+  }
+ /* select[name^=scoreboard[cohort]]{
+    color:red;
+  }*/
+
+  select{
+    display:block;
+    background-color:rgba(255,255,255,0.9);
+    border: $purple 1px solid;
+    /*width:200px;*/
+    font-size: 1em;
+    color: $purple;
+    text-shadow:0px 1px 0px black;
+
+  }
+
+  input[type="submit"]{
+     -webkit-appearance: button;
+   /* display: block;
+    width: 200px;
+    height:200px;*/
+    margin-top: 18px;
+    width:100%;
+    color:white;
+    font-size: 1em;
+    text-shadow:1px 1px 1px black;
+    box-shadow: 2px 2px 2px black;
+    margin-left: -10px;
+    /*background-color:rgba(255,255,255,0.9);*/
+    background-color: $purple;
+    border:1px solid $purple;
+    border-radius: 10px;
+  }
+
+  input[type="submit"]:hover{
+    background-color:rgba(128,0,128,0.5);
+  }
+ /* input[name=commit]{
+    width: 200px;
+    height:200px;
+  }*/
+
+
+}
+/*-------Home start New Game END-------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------POP-UP PAGE----------*/
+.totalDayPoints{
+ /* background: url(xspace.gif);
+  background-size: cover;*/
+  background-color: rgba(255,255,255,0.3);
+  border:red 2px solid;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding:10px;
+  color:white;
+  font-weight: 300;
+  padding-top:20px;
+    h1{
+      font-size: 2.7em;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .Breakline{
+      margin-bottom:15px;
+    }
+
+    ul{
+      border:red;
+      margin-right: 2%;
+      margin-left: 2%;
+      border: red 1px solid;
+
+    }
+
+    li{
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+    canvas{
+      background-color: rgba(255,255,255,0.2);
+      border-radius: 10px;
+      border:$purple;
+/*      width:80%;
+      margin-left:10%;
+      margin-right: 10%;*/
+    }
+}
+.totalDayPoints .chart{
+  border:1px green solid;
+  margin-bottom: 100px;
+}
+
+/*.chart1 canvas{*/
+.totalDayPoints img{
+    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+    border: 1px solid purple;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    display: block;
+    margin: 0 auto;
+}
+
+/*----------POP-UP PAGE END----------*/
+
+.home{
+  background: url(xspace.gif);
+  /*background-size: cover;*/
+    /*background-attachment: fixed;*/
+    /*background-position: center;*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+    /*background: no-repeat;*/
+/*    height: 100%;
+    width:100;*/
   /*height: 500px;*/
 }
 .beforeSwipeLeft{
   float:left;
   background: url(xspace.gif);
   background-size: cover;
+  /*height:2000px;*/
   /*height: 500px;*/
   /*background-color: rgba(255,255,255,0.5);*/
   width:100%;
@@ -432,10 +730,11 @@ margin-top: 15px;
   /*background-color: rgba(0,0,0,0.5);*/
   background: url(xspace.gif);
   background-size: cover;
+  /*height:2000px;*/
   /*height: 500px;*/
   width:100%;
   /*margin-left: 5%;*/
-  height:1000px;
+  /*height:1000px;*/
   /*margin-top: 10px;*/
   margin-right: -100%;
   transition: margin-right 0.5s;
