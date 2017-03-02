@@ -168,6 +168,20 @@ nav.xheader  li.gitLi{
 }
 /*---------NAV BAR END-------*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*----------LeftPage START----------*/
 
 .leftPage .backGroundFadeLeft{
@@ -193,6 +207,7 @@ nav.xheader  li.gitLi{
   /*border:solid black 1px;*/
   font-size: 2em;
   font-weight: 300;
+  margin-bottom: 50px;
 }
 .gitInfo li{
   color:white;
@@ -217,7 +232,28 @@ img.userPic{
   display: block;
   margin: 0 auto;
 }
+
+.chart1{
+  /*float:right;*/
+  margin-bottom: 60px;
+}
+.chart1 canvas{
+  width:300px;
+  background-color: rgba(255,255,255,0.1);
+  padding:15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  color:red;
+
+}
 /*----------LeftPage END----------*/
+
+
+
+
+
+
+
 
 
 
@@ -322,16 +358,6 @@ margin-bottom: 30px;
 
 /*-----------Right Page END---------- */
 
-
-
-
-
-
-
-
-
-
-
 /*---------Home Loged In---------*/
 /*views/scoreboards/show*/
 .views.scoreboard.show{
@@ -377,8 +403,8 @@ margin-bottom: 30px;
 .views.scorboards.scoreboard_challenges{
   /*width:86%;*/
   color:white;
-  margin-right:3%;
-  margin-left:3%;
+  margin-right:6%;
+  margin-left:6%;
   /*border:solid black 1px;*/
   padding:10px;
   background-color: rgba(255,255,255,0.1);
@@ -424,23 +450,6 @@ margin-bottom: 30px;
 
 }
 /*---------Home Loged In END---------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .home{
   background: url(xspace.gif);

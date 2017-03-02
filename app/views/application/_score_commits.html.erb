@@ -5,8 +5,9 @@
 <!-- USER CHARTS -->
 
 
-
-<%= area_chart current_user.scoreboards.where({ "cohort" => @set_cohort }).group(:day).sum(:day_points) , width: "500px", height: "200px",colors: ["pink", "#999"] %>
+<!-- <div class="chart1">
+  <%#= area_chart current_user.scoreboards.where({ "cohort" => @set_cohort }).group(:day).sum(:day_points) , width: "300px", height: "120px",colors: ["#ff7885", "#999"] %>
+</div> -->
 <h3>Your Daily Scores Over Time</h3>
 
 <!-- /USER CHARTS -->
@@ -22,3 +23,6 @@
 <% end %>
 
 <p>Commits: <%#scoreboard.commits%></p>
+<div class="chart1">
+  <%= area_chart current_user.scoreboards.where({ "cohort" => @set_cohort }).group(:day).sum(:day_points) , width: "300px", height: "120px",colors: ["#ff7885", "#ffffff"] %>
+</div>
