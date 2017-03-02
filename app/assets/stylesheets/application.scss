@@ -704,28 +704,28 @@ background-color: rgba(255,255,255,0.1);
 //   display: block;
 //   margin-left: 0%;
 // }
-.beforeSwipeLeft{
-  float:left;
-  background: url(xspace.gif);
-  background-size: cover;
-  /*height:2000px;*/
-  /*height: 500px;*/
-  /*background-color: rgba(255,255,255,0.5);*/
-  width:100%;
-  /*margin-top: 10px;*/
-  margin-left: -100%;
-  transition: margin-left 0.5s;
-  -webkit-transition: margin-left 0.5s;
-}
+// .beforeSwipeLeft{
+//   float:left;
+//   background: url(xspace.gif);
+//   background-size: cover;
+//   /*height:2000px;*/
+//   /*height: 500px;*/
+//   /*background-color: rgba(255,255,255,0.5);*/
+//   width:100%;
+//   /*margin-top: 10px;*/
+//   margin-left: -100%;
+//   transition: margin-left 0.5s;
+//   -webkit-transition: margin-left 0.5s;
+// }
 
-.beforeSwipeLeft p, .beforeSwipeRight p{
-  color:white;
-}
+// .beforeSwipeLeft p, .beforeSwipeRight p{
+//   color:white;
+// }
 
-.leftPage{
-  display: block;
-  margin-left: 0%;
-}
+// .leftPage{
+//   display: block;
+//   margin-left: 0%;
+// }
 
 .home{
   float:none;
