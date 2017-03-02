@@ -30,8 +30,9 @@ class ScoreboardsController < ApplicationController
 	end
 
 	def download
+		p params
+		p "@" *30
 		path = "notes_for_day.txt"; array=[]
-
 		@scoreboard.notes.each do |element|
 			array << "TITLE: "
 			array << element.title
