@@ -110,13 +110,18 @@ body{
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+.fixSafariOverflow{
+  background-color: #3b3251;
+}
+
+
 a{
   text-decoration: none;
   color:#7d8485;
 }
 /*---------NAV BAR START-------*/
 nav.xheader {
-  background-color: rgba(0,0,0,0.0);
+  background-color: rgba(255,255,255,1);
   height:60px;
 }
 
@@ -306,6 +311,7 @@ font-size: 1.5em;
 border:1px solid $purple;
 border-radius: 5px;
 margin-top: 15px;
+margin-bottom: 30px;
 
 }
 
@@ -377,7 +383,7 @@ margin-top: 15px;
   padding:10px;
   background-color: rgba(255,255,255,0.1);
   border-radius: 10px;
-  border:2px solid red;
+  /*border:2px solid red;*/
 }
 
 
@@ -393,12 +399,29 @@ margin-top: 15px;
   font-weight: 300;
   font-size: 2em;
   margin-top: 50px;
+  margin-bottom: 15px;
 }
 
 ._scoreboard_challenges form{
-  border:2px solid red;
+  /*border:2px solid green;*/
+  padding:10px;
   padding-left: 20px;
   font-size: 1.5em;
+
+}
+
+._scoreboard_challenges input.release-checkbox{
+  background-color:red;
+  border:none;
+  border-radius: 50%;
+  height:25px;
+  width:25px;
+}
+
+
+.scoreboard_challenges li{
+  margin-bottom:10px;
+
 }
 /*---------Home Loged In END---------*/
 
@@ -426,7 +449,7 @@ margin-top: 15px;
     /*background-position: center;*/
     background-repeat: no-repeat;
     background-size: cover;
-    height:2000px;
+    height:100%;
     /*background: no-repeat;*/
 /*    height: 100%;
     width:100;*/

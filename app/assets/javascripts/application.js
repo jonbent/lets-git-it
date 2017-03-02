@@ -59,6 +59,11 @@ $(document).ready(function(){
      }
   });//End RightPage slider
 
+  $("._scoreboard_challenges input.release-checkbox").on('click',function(){
+    $(this).css("background-color","green");
+  });
+
+
   addNoteToDatabase()
   addEngineeringEmpathyPoint();
   completeChallengeRelease();
