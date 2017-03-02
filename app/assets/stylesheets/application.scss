@@ -218,9 +218,28 @@ nav.xheader  li.gitLi{
   margin-right:2%;
   margin-left:2%;
   /*border:solid black 1px;*/
+  color:white;
   padding: 10px;
 
   /*margin-top: 20px;*/
+}
+.views.users.index h3{
+  font-size: 2em;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.views.users.index .scoreInfo{
+  /*border:2px solid red;*/
+  margin-right: 6%;
+  margin-right: 6%;
+  padding:10px;
+  padding-left: 20px;
+}
+.views.users.index .scoreInfo p{
+  font-size: 1.5em;
+  font-weight: 300;
+  margin-bottom: 10px;
 }
 
 img.userPic{
@@ -234,8 +253,10 @@ img.userPic{
 }
 
 .chart1{
-  /*float:right;*/
+  /*margin-top: -150px;
+  float:right;*/
   margin-bottom: 60px;
+
 }
 .chart1 canvas{
   width:300px;
@@ -246,6 +267,54 @@ img.userPic{
   color:red;
 
 }
+@media only screen and (min-width: 820px) {
+    .chart1 {
+      margin-top: -160px;
+      float:right;
+    }
+}
+
+
+
+.eeButtons input{
+  width:80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  height:50px;
+
+}
+.eeButtons input[type=submit]{
+ /* height: 50px;
+  font-size: 2em;*/
+}
+/*input[type=submit].ee-btns{
+color: red;
+}*/
+.ee-btns input[type=submit]{
+  /*color:red;*/
+  padding:10px;
+  color:white;
+  background-color: rgba(255,255,255,0.1);
+  height: 50px;
+  font-size: 1.7em !important;
+  border:none;
+  margin-bottom:50px !important;
+  font-weight: 300;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px black;
+  border:1px solid $purple;
+
+}
+
+.ee-btns input[type=submit]:hover{
+  background-color: rgba(255,255,255,0.3);
+}
+
+/*form#edit_scoreboard_21.ee-btns{
+  height:50px;
+  font-size: 2em;
+}*/
+
 /*----------LeftPage END----------*/
 
 
@@ -308,7 +377,9 @@ img.userPic{
 
   /*box-shadow: 0px 0px 10px $purple;*/
 }
-
+.notes-container input[type=submit]:hover{
+  background-color: rgba(128,0,128,0.3);
+}
 .notes-container input[type=text]:focus{
   outline: none;
   border:$purple;
@@ -348,6 +419,10 @@ border:1px solid $purple;
 border-radius: 5px;
 margin-top: 15px;
 margin-bottom: 30px;
+
+}
+.downLoadNotes:hover{
+  background-color: rgba(128,0,128,0.3)
 
 }
 
