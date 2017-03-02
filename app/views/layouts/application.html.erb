@@ -26,7 +26,11 @@
       </div>
     </div><!-- End leftPage -->
     <div class="home home-page-slider">
-      <%= render template: 'scoreboards/show' %>
+      <% if @scoreboard %>
+        <%= render template: 'scoreboards/show' %>
+      <% else %>
+        <%= render template: 'scoreboards/new' %>
+      <% end %>
     </div>
     <div id="rightPage" class="beforeSwipeRight home-page-slider hidden">
         <div class="backGroundFade">

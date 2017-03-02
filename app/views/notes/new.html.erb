@@ -1,4 +1,4 @@
-<% if logged_in? %>
+<% if logged_in? && @scoreboard.id%>
   <article class="xviews xnotes xnew">
     <div class="allNotes">
     <h1>Ah Ha</h1>
@@ -56,4 +56,3 @@
 <div class="downLoadNotes">
 <%= link_to "Download Notes",   "/scoreboards/#{@scoreboard.id}/download"%>
 </div>
-
