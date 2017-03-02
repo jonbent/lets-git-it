@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% if logged_in? %>
   <article class="xviews xnotes xnew">
     <div class="allNotes">
@@ -49,9 +50,11 @@
       <% end %>
     </div>
   </div>
-  </article>
+</div>
+<% end %>
+</article>
 
-  <div class="downLoadNotes">
-  <%= link_to "Download Notes", scoreboards_download_path %>
+<div class="downLoadNotes">
+<%= link_to "Download Notes",   "/scoreboards/#{@scoreboard.id}/download"%>
 </div>
 <% end %>

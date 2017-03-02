@@ -43,6 +43,22 @@ $(document).ready(function(){
       } );
 
 
+  var rightPageSlide = document.getElementById('rightPage');
+  var slider = new Hammer(rightPageSlide)
+  slider.on("panleft panright tap press", function(ev) {
+     if(ev.type=="panleft"){
+       // console.log("panleft")
+     }else if(ev.type=="panright"){
+       // console.log("panright")
+       $('#rightPage').removeClass("rightPage", homeAfterRight());
+     }
+  });//End RightPage slider
+
+  $("._scoreboard_challenges input.release-checkbox").on('click',function(){
+    $(this).css({"background-color":"green","box-shadow": "0px 0px 0px black","border":"black 1px solid" });
+  });
+// "box-shadow": "0px 0px 2px black"
+// "border":"black"
 
   addNoteToDatabase()
   addEngineeringEmpathyPoint();

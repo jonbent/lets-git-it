@@ -1,3 +1,4 @@
+<div class="newGameForm">
 <%= form_for :scoreboard, url:scoreboards_path do |f| %>
 	<p><%= f.label :week %>
 	<%= f.select(:week, options_for_select([1,2,3,4,5,6,7,8,9])) %></p>
@@ -5,5 +6,6 @@
 	<%= f.select(:day, options_for_select(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Weekend"]))%></p>
 	<p><%= f.label :cohort %>
 	<%= f.select(:cohort, options_for_select(["Jackrabbits", "Coyotes", "Otters", "Squirrels", "Fireflies", "Foxes"])) %></p>
-	<p><%= f.submit "Let's Git It!" %></p>
-<%end%> 
+	<p class="submitWork"><%= f.submit "Let's Git It!" %></p>
+<%end%>
+</div>

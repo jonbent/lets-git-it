@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'homes/index'
   root 'scoreboards#new'
 
-  get "scoreboards/download"  => 'scoreboards#download'
+  get "scoreboards/:id/download"  => 'scoreboards#download'
   get "scoreboards/leaderboard",  as: 'leaderboard'
   get "users/update_week" => 'users#update_week'
   get "users/update_cohort" => 'users#update_cohort'
