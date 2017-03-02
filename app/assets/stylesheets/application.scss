@@ -511,6 +511,98 @@ margin-bottom: 30px;
 
 
 
+/*-------Home start New Game-------*/
+.startGamehome{
+  height:1000px;
+  background: url(xspace.gif);
+  background-size: cover;
+ /* border:red 1px solid;*/
+  color: white;
+  font-weight: 300;
+  margin-right: 3%;
+  margin-left: 3%;
+  padding-top: 20px;
+    h1{
+      font-size: 2.8em;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+}
+.newGameForm{
+/*border: red 1px solid;*/
+margin: 0 auto;
+border-radius: 10px;
+box-shadow: 1px 1px 1px black;
+/*margin-right:10%;
+margin-left: 10%;*/
+width:400px ;
+padding:10px;
+padding-top: 20px;
+
+background-color: rgba(255,255,255,0.1);
+  p{
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    padding-left: 20px;
+    /*text-align: center;*/
+  }
+ /* select[name^=scoreboard[cohort]]{
+    color:red;
+  }*/
+
+  select{
+    display:block;
+    background-color:rgba(255,255,255,0.9);
+    border: $purple 1px solid;
+    /*width:200px;*/
+    font-size: 1em;
+    color: $purple;
+    text-shadow:0px 1px 0px black;
+
+  }
+
+  input[type="submit"]{
+     -webkit-appearance: button;
+   /* display: block;
+    width: 200px;
+    height:200px;*/
+    margin-top: 18px;
+    width:100%;
+    color:white;
+    font-size: 1em;
+    text-shadow:1px 1px 1px black;
+    box-shadow: 2px 2px 2px black;
+    margin-left: -10px;
+    /*background-color:rgba(255,255,255,0.9);*/
+    background-color: $purple;
+    border:1px solid $purple;
+    border-radius: 10px;
+  }
+
+  input[type="submit"]:hover{
+    background-color:rgba(128,0,128,0.5);
+  }
+ /* input[name=commit]{
+    width: 200px;
+    height:200px;
+  }*/
+
+
+}
+/*-------Home start New Game END-------*/
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -575,21 +667,6 @@ margin-bottom: 30px;
 }
 
 /*----------POP-UP PAGE END----------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .home{
   background: url(xspace.gif);
