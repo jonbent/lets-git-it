@@ -2,13 +2,14 @@
 
 <!-- <h1>Let's Git It!</h1> -->
 <div class="views users index">
-
 <% if @scoreboard %>
 	<div id="points-container">
 		<%= render partial: "score_commits", locals: {scoreboard: @scoreboard} %>
 	</div>
 <%end%>
-
-<%= render partial: "ee_buttons" %>
-
 </div>
+<div class="eeWraper">
+<%= render partial: "ee_buttons" %>
+</div>
+
+

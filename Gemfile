@@ -54,7 +54,7 @@ gem "chartkick"
 gem 'groupdate'
 
 gem 'highcharts-rails'
-gem 'fusioncharts-rails'
+# gem 'fusioncharts-rails'
 
 
 #One more api - gem for

@@ -1,7 +1,7 @@
 class ScoreboardsController < ApplicationController
 
 	def new
-		@scoreboard = Scoreboard.new
+		# @scoreboard = Scoreboard.new
 	end
 
 	def create
