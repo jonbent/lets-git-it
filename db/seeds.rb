@@ -944,17 +944,19 @@ challenges = [
 # Note.create(title: "WhatEver",body: "Screw you all", note_type: "b", scoreboard: s)
 
 
-u = User.create(username: "George Maffin", phase: 2, cohort: "Squirrels",
- total_points: 54, number_commits: 10, picture_url: "https://avatars2.githubusercontent.com/u/20651552?v=3&s=460")
-days=['Monday','Friday','Wednesday','Tuesday','Thursday']
 
-15.times do
-	s = Scoreboard.create(user: u, day_points: rand(40), day: days.sample,
-	 week: rand(8),  cohort: "Squirrels", commits: rand(20))
+days=['Monday','Tuesday','Wednesday','Thursday','Friday']; users_array=[]
+
+30.times do
+	internet_name = Faker::Internet.user_name
+	users_array << User.create(username: Faker::Name.name, phase: 2, cohort: "Squirrels",
+	total_points: rand(50), number_commits: rand(200), picture_url: Faker::Avatar.image(internet_name) )
+end
+30.times do
+	Scoreboard.create(user: users_array.sample, day_points: rand(15), day: days.sample,
+	week: rand(8),  cohort: "Squirrels", commits: rand(10))
 end
 
 challenges.each do |params|
 	Challenge.create(params)
 end
-
-# Note.create(title: "WhatEver",body: "Screw you all", note_type: "b", scoreboard: s)
