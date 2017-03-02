@@ -18,9 +18,11 @@ TOTAL COMMITS: <%= @total_commits %> <br>
 <% end %>
 
 LEVEL: <%= @user.level %><br>
-EXP: 100/<%= @user.level_extra %>%
+EXP: <%= @user.level_extra %>%
 
 
+<% data = [['Level', @user.level_extra ]]%>
+<%= bar_chart data, width: "300px", height: "60px", max: 100,colors: ["red", "#999"]%>
 
 
 <form action="/users/update_week" method="get">
