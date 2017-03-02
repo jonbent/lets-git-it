@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 		@total_commits = @user_scoreboards.map(&:commits).reduce(:+)
 		@user_scoreboards = 1 if (@user_scoreboards.nil?)
 		@total_commits = 1 if (@total_commits.nil?)
+		render 'users/show'
 	end
 
 	def update_week

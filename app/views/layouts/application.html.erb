@@ -17,30 +17,33 @@
   <body id="body">
   <div class="fixSafariOverflow">
     <%= render partial: '/header' %>
-
-    <div id="leftPage" class="beforeSwipeLeft home-page-slider hidden">
-      <div class="backGroundFadeLeft">
-        <% if @scoreboard %>
-          <%= render template: 'users/index'%>
-        <% end %>
-      </div>
-    </div><!-- End leftPage -->
+    <% if logged_in? && @scoreboard%>
+      <div id="leftPage" class="beforeSwipeLeft home-page-slider hidden">
+        <div class="backGroundFadeLeft">
+          <% if @scoreboard %>
+            <%= render template: 'users/index'%>
+          <% end %>
+        </div>
+      </div><!-- End leftPage -->
+    <% end %>
     <div class="home home-page-slider">
       <% if @scoreboard %>
         <%= render template: 'scoreboards/show' %>
       <% else %>
+      <!-- <div class="home home-page-slider"> -->
         <%= render template: 'scoreboards/new' %>
       <% end %>
     </div>
-    <div id="rightPage" class="beforeSwipeRight home-page-slider hidden">
-        <div class="backGroundFade">
-          <% if @scoreboard %>
-            <% @scoreboard = @scoreboard %>
-            <% @note = Note.new %>
-            <%= render template:"notes/new", locals:{scoreboard_id: @scoreboard.id, scoreboard: @scoreboard}%>
-          <% end %>
+    <% if logged_in? && @scoreboard%>
+      <div id="rightPage" class="beforeSwipeRight home-page-slider hidden">
+          <div class="backGroundFade">
+            <% if @scoreboard %>
+              <% @note = Note.new %>
+              <%= render template:"notes/new", locals:{scoreboard_id: @scoreboard.id, scoreboard: @scoreboard}%>
+            <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
   </div> <!-- END fixSafariOverflow -->
   </body>
 </html>

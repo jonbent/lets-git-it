@@ -9,7 +9,7 @@
 		<th>Commits</th>
 		<br>
 	</tr>
-	<% @users.each do |user| %>
+	<% User.where.not(total_points: nil).order(total_points: :desc).limit(10).each do |user| %>
 	<tr>
 		<% if user.picture_url.nil? %>
 			<%  user.picture_url = "http://www.brunningonline.net/simon/blog/archives/South%20Park%20Avatar.jpg"%>
