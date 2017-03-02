@@ -19,33 +19,28 @@
 
 $(document).ready(function(){
 
-  var homeSlide = document.getElementById('home');
-  var slider = new Hammer(homeSlide)
-  slider.on("panleft panright tap press", function(ev) {
-        console.log(ev.type);
-        if(ev.type=="panleft"){
-          // console.log("panleft")
-         $('#rightPage').addClass("rightPage");
-         $('#home').addClass("afterSwipeRightHome");
-        }else if(ev.type=="panright"){
-          // console.log("panright")
-          $('#leftPage').addClass("leftPage");
-          $('#home').addClass("afterSwipeLeftHome");
-        }
-    });//End Home slider
 
-
-  var leftPageSlide = document.getElementById('leftPage');
-  var slider = new Hammer(leftPageSlide)
-  slider.on("panleft panright tap press", function(ev) {
-    if(ev.type=="panleft"){
-      // console.log("panleft")
-     $('#leftPage').removeClass("leftPage", homeAfterLeft());
-    }else if(ev.type=="panright"){
-      // console.log("panright")
-      $('#leftPage').addClass("leftPage");
-    }
-  });//End left Page slider
+  new Hammer( $( ".fixSafariOverflow" )[ 0 ], {
+        domEvents: true
+      } );
+      var current = 1;
+      var pgs = $( ".home-page-slider" );
+      $( ".fixSafariOverflow" ).on( "swipeleft", function( e ) {
+       if ( pgs[ current + 1 ] ) {
+         pgs.removeClass( "home" );
+         pgs.addClass('hidden')
+         pgs.eq( ++current ).addClass( "home" );
+         pgs.eq(current).removeClass( "hidden" );
+       }
+      } );
+      $( ".fixSafariOverflow" ).on( "swiperight", function( e ) {
+       if ( pgs[ current - 1 ] ) {
+         pgs.removeClass( "home" );
+         pgs.addClass('hidden')
+         pgs.eq( --current ).addClass( "home" );
+         pgs.eq(current).removeClass( "hidden" );
+       }
+      } );
 
 
   var rightPageSlide = document.getElementById('rightPage');
@@ -74,14 +69,14 @@ $(document).ready(function(){
 function homeAfterLeft() {
   setTimeout(function(){
     $('#home').removeClass("afterSwipeLeftHome");
-  }, 400);
+  }, 75);
 }
 
 
 function homeAfterRight(){
     setTimeout(function(){
     $('#home').removeClass("afterSwipeRightHome");
-    }, 400);
+  }, 75);
 }
 
 var addNoteToDatabase = function(){
