@@ -19,6 +19,14 @@ class User < ApplicationRecord
 		end
   end
 
+  def total_commits
+		if self.scoreboards.size.zero?
+			return 0
+		else
+			self.scoreboards.map(&:commits).reduce(:+)
+		end
+  end
+
   def level
   	# level = Math.sqrt(self.total_points).floor
     return 0 if (self.total_days_points).nil?
