@@ -169,19 +169,6 @@ nav.xheader  li.gitLi{
 /*---------NAV BAR END-------*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*----------LeftPage START----------*/
 
 .leftPage .backGroundFadeLeft{
@@ -316,21 +303,6 @@ color: red;
 }*/
 
 /*----------LeftPage END----------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*-----------Right Page---------- */
@@ -526,6 +498,98 @@ margin-bottom: 30px;
 
 }
 /*---------Home Loged In END---------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------POP-UP PAGE----------*/
+.totalDayPoints{
+ /* background: url(xspace.gif);
+  background-size: cover;*/
+  background-color: rgba(255,255,255,0.3);
+  border:red 2px solid;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding:10px;
+  color:white;
+  font-weight: 300;
+  padding-top:20px;
+    h1{
+      font-size: 2.7em;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .Breakline{
+      margin-bottom:15px;
+    }
+
+    ul{
+      border:red;
+      margin-right: 2%;
+      margin-left: 2%;
+      border: red 1px solid;
+
+    }
+
+    li{
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+    canvas{
+      background-color: rgba(255,255,255,0.2);
+      border-radius: 10px;
+      border:$purple;
+/*      width:80%;
+      margin-left:10%;
+      margin-right: 10%;*/
+    }
+}
+.totalDayPoints .chart{
+  border:1px green solid;
+  margin-bottom: 100px;
+}
+
+/*.chart1 canvas{*/
+.totalDayPoints img{
+    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+    border: 1px solid purple;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    display: block;
+    margin: 0 auto;
+}
+
+/*----------POP-UP PAGE END----------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .home{
   background: url(xspace.gif);
