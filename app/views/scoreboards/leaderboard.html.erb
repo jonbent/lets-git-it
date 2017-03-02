@@ -6,7 +6,7 @@
 		<th>Username</th>
 		<th>Cohort</th>
 		<th>Points</th>
-		<th>Commits</th>
+		<!-- <th>Commits</th> -->
 		<br>
 	</tr>
 	<% User.where.not(total_points: nil).order(total_points: :desc).limit(10).each do |user| %>
@@ -16,9 +16,8 @@
 		<% end %>
 		<td><img src="<%= user.picture_url %>" alt="schema.png" height="100" width="100"></td>
 		<td><%= link_to "#{user.username}", user_path(user)%></td>
-		<td><%= user.cohort %></td>
-		<td><%= user.total_points %></td>
-		<td><%= user.number_commits %></td>
+		<td> <%= user.cohort %></td>
+		<td> <%= user.total_points %></td>
 	</tr>
 	<% end %>
 </table>
