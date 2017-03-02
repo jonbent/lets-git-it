@@ -1,55 +1,57 @@
-<article class="xviews xnotes xnew">
-  <div class="allNotes">
-  <h1>Ah Ha</h1>
-  <div class="Breakline"></div>
-  <div class='notes-container'>
-    <%= form_for [@scoreboard, @note], :html => {:class => "note-form"} do |f| %>
+<% if logged_in? %>
+  <article class="xviews xnotes xnew">
+    <div class="allNotes">
+    <h1>Ah Ha</h1>
+    <div class="Breakline"></div>
+    <div class='notes-container'>
+      <%= form_for [@scoreboard, @note], :html => {:class => "note-form"} do |f| %>
+        <ul>
+          <li><%= f.label :title, "Subject" %>:</li>
+          <li class="notesSubjectFeild"><%= f.text_field :title  %></li>
+          <li><%= f.label :body, "What I learned" %></li>
+          <li><%= f.text_area :body %></li>
+          <%= f.hidden_field :note_type, value: 'a' %>
+          <%= f.hidden_field :scoreboard_id, value: "#{@scoreboard.id}" %>
+          <li><%= f.submit %></li>
+        </ul>
+      <% end %>
+    </div>
+
+    <h1>Blockers</h1>
+    <div class="Breakline"></div>
+    <div class='notes-container'>
+      <%= form_for [@scoreboard, @note], :html => {:class => "note-form"} do |f| %>
       <ul>
-        <li><%= f.label :title, "Subject" %>:</li>
-        <li class="notesSubjectFeild"><%= f.text_field :title  %></li>
-        <li><%= f.label :body, "What I learned" %></li>
+        <li><%= f.label :title, "Subject:"  %></li>
+        <li class="notesSubjectFeild"><%= f.text_field :title %></li>
+        <li><%= f.label :body, "Embrace confusion" %></li>
         <li><%= f.text_area :body %></li>
-        <%= f.hidden_field :note_type, value: 'a' %>
+        <%= f.hidden_field :note_type, value: 'b' %>
         <%= f.hidden_field :scoreboard_id, value: "#{@scoreboard.id}" %>
         <li><%= f.submit %></li>
       </ul>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 
-  <h1>Blockers</h1>
-  <div class="Breakline"></div>
-  <div class='notes-container'>
-    <%= form_for [@scoreboard, @note], :html => {:class => "note-form"} do |f| %>
-    <ul>
-      <li><%= f.label :title, "Subject:"  %></li>
-      <li class="notesSubjectFeild"><%= f.text_field :title %></li>
-      <li><%= f.label :body, "Embrace confusion" %></li>
-      <li><%= f.text_area :body %></li>
-      <%= f.hidden_field :note_type, value: 'b' %>
-      <%= f.hidden_field :scoreboard_id, value: "#{@scoreboard.id}" %>
-      <li><%= f.submit %></li>
-    </ul>
-    <% end %>
+    <h1>Feedback</h1>
+    <div class="Breakline"></div>
+    <div class='notes-container'>
+      <%= form_for [@scoreboard, @note], :html => {:class => "note-form"} do |f| %>
+      <ul>
+        <li><%= f.label :title, "For whom?" %></li>
+        <li class="notesSubjectFeild"><%= f.text_field :title %></li>
+        <li><%= f.label :body, "ASK Feedback" %></li>
+        <li><%= f.text_area :body %></li>
+        <%= f.hidden_field :note_type, value: 'f' %>
+        <%= f.hidden_field :scoreboard_id, value: "#{@scoreboard.id}" %>
+        <li><%= f.submit %></li>
+      </ul>
+      <% end %>
+    </div>
   </div>
+  </article>
 
-  <h1>Feedback</h1>
-  <div class="Breakline"></div>
-  <div class='notes-container'>
-    <%= form_for [@scoreboard, @note], :html => {:class => "note-form"} do |f| %>
-    <ul>
-      <li><%= f.label :title, "For whom?" %></li>
-      <li class="notesSubjectFeild"><%= f.text_field :title %></li>
-      <li><%= f.label :body, "ASK Feedback" %></li>
-      <li><%= f.text_area :body %></li>
-      <%= f.hidden_field :note_type, value: 'f' %>
-      <%= f.hidden_field :scoreboard_id, value: "#{@scoreboard.id}" %>
-      <li><%= f.submit %></li>
-    </ul>
-    <% end %>
-  </div>
+  <div class="downLoadNotes">
+  <%= link_to "Download Notes", scoreboards_download_path %>
 </div>
-</article>
-
-<div class="downLoadNotes">
-<%= link_to "Download Notes", scoreboards_download_path %>
-</div>
+<% end %>

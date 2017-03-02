@@ -49,6 +49,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+  user-select: none;
+  -moz-user-select: none;
 }
 ol, ul {
   list-style: none;
@@ -384,65 +386,72 @@ margin-top: 15px;
   background-size: cover;
   /*height: 500px;*/
 }
-.beforeSwipeLeft{
-  float:left;
-  background: url(xspace.gif);
-  background-size: cover;
-  /*height: 500px;*/
-  /*background-color: rgba(255,255,255,0.5);*/
-  width:100%;
-  /*margin-top: 10px;*/
-  margin-left: -100%;
-  transition: margin-left 0.5s;
-  -webkit-transition: margin-left 0.5s;
-}
+// .beforeSwipeLeft{
+//   float:left;
+//   background: url(xspace.gif);
+//   background-size: cover;
+//   /*height: 500px;*/
+//   /*background-color: rgba(255,255,255,0.5);*/
+//   width:100%;
+//   /*margin-top: 10px;*/
+//   margin-left: -100%;
+//   transition: margin-left 0.5s;
+//   -webkit-transition: margin-left 0.5s;
+// }
 
-.beforeSwipeLeft p, .beforeSwipeRight p{
-  color:white;
-}
+// .beforeSwipeLeft p, .beforeSwipeRight p{
+//   color:white;
+// }
 
-.leftPage{
-  display: block;
-  margin-left: 0%;
-}
+// .leftPage{
+//   display: block;
+//   margin-left: 0%;
+// }
 
 .home{
   float:none;
-  transition: margin-left 0.5s;
-  -webkit-transition: margin-left 0.5s;
-    transition: margin-right 0.5s;
-  -webkit-transition: margin-right 0.5s;
+  display: block;
+  // transition: margin-left 0.5s;
+  // -webkit-transition: margin-left 0.5s;
+  //   transition: margin-right 0.5s;
+  // -webkit-transition: margin-right 0.5s;
 }
 
-.afterSwipeLeftHome{
-  display:none;
-  margin-right: -100%;
-  float:right;
-}
+// .afterSwipeLeftHome{
+//   display:none;
+//   margin-right: -100%;
+//   float:right;
+// }
+//
+// .afterSwipeRightHome{
+//   display:none;
+//   margin-left:-100%;
+//   float:left;
+// }
 
-.afterSwipeRightHome{
-  display:none;
-  margin-left:-100%;
-  float:left;
-}
+// .beforeSwipeRight{
+//   color:white;
+//   float:right;
+//   /*background-color: rgba(0,0,0,0.5);*/
+//   background: url(xspace.gif);
+//   background-size: cover;
+//   /*height: 500px;*/
+//   width:100%;
+//   /*margin-left: 5%;*/
+//   height:1000px;
+//   /*margin-top: 10px;*/
+//   margin-right: -100%;
+//   transition: margin-right 0.5s;
+//   -webkit-transition: margin-right 0.5s;
+// }
 
-.beforeSwipeRight{
-  color:white;
-  float:right;
-  /*background-color: rgba(0,0,0,0.5);*/
+// .rightPage{
+//   display: block;
+//   margin-right: 0%;
+// }
+
+.hidden{
+  display: none;
   background: url(xspace.gif);
   background-size: cover;
-  /*height: 500px;*/
-  width:100%;
-  /*margin-left: 5%;*/
-  height:1000px;
-  /*margin-top: 10px;*/
-  margin-right: -100%;
-  transition: margin-right 0.5s;
-  -webkit-transition: margin-right 0.5s;
-}
-
-.rightPage{
-  display: block;
-  margin-right: 0%;
 }

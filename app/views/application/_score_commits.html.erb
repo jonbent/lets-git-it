@@ -15,9 +15,7 @@
 
   <p>Level: <%=current_user.level%></p>
   <p>Total Score: <%=current_user.total_days_points%></p>
-<% end %>
-<p>Score: <%=scoreboard.day_points%></p>
-<% unless current_user.scoreboards.size.zero? %>
+	<p>Score: <%=scoreboard.day_points%></p>
   <p>Average Commits Per Day: <%= (current_user.scoreboards.map(&:commits).reduce(:+)) / (current_user.scoreboards.size ) %></p>
 <% end %>
 

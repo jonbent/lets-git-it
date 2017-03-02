@@ -17,17 +17,18 @@
   <body id="body">
   <div class="fixSafariOverflow">
     <%= render partial: '/header' %>
-    <%= yield %>
 
-    <div id="leftPage" class="beforeSwipeLeft">
+    <div id="leftPage" class="beforeSwipeLeft home-page-slider hidden">
       <div class="backGroundFadeLeft">
         <% if @scoreboard %>
           <%= render template: 'users/index'%>
         <% end %>
       </div>
     </div><!-- End leftPage -->
-
-    <div id="rightPage" class="beforeSwipeRight">
+    <div class="home home-page-slider">
+      <%= render template: 'scoreboards/show' %>
+    </div>
+    <div id="rightPage" class="beforeSwipeRight home-page-slider hidden">
         <div class="backGroundFade">
           <% if @scoreboard %>
             <% @scoreboard = @scoreboard %>
