@@ -1,0 +1,25 @@
+<!-- views/scoreboards/show -->
+<article id="home" class="home">
+<div class="views scoreboard show">
+<h1>Daily Scoreboard</h1>
+  <div class="Breakline"></div>
+
+  <div class="dayPoints">
+    <ul>
+    <li>Day: <span><%=@scoreboard.day%></span></li>
+    <li>Week: <span><%=@scoreboard.week%></span></li>
+    <li>Phase: <span><%=@scoreboard.phase%></span></li>
+    <li>Today's Points: <span><%=@scoreboard.day_points%></span></li>
+    <li>Commits: <span><%=@scoreboard.commits%></span></li>
+    <% @challenges = @scoreboard.challenges %>
+    </ul>
+  </div>
+</div>
+<!-- <div class="Breakline"></div> -->
+<% if @scoreboard.challenges %>
+	<%= render "scoreboard_challenges"%>
+<% end %>
+
+<%#= render "users/ee_buttons" %>
+	
+</article>

@@ -1,0 +1,31 @@
+<% if logged_in? %>
+	<%= render partial: "gh_user_data" %>
+
+
+<!-- USER CHARTS -->
+
+
+<!-- <div class="chart1">
+  <%#= area_chart current_user.scoreboards.where({ "cohort" => @set_cohort }).group(:day).sum(:day_points) , width: "300px", height: "120px",colors: ["#ff7885", "#999"] %>
+</div> -->
+<h3>Your Daily Scores Over Time</h3>
+<div class="Breakline"></div>
+
+<!-- /USER CHARTS -->
+
+
+<div class="scoreInfo">
+  <p>Level: <%=current_user.level%></p>
+  <p>Total Score: <%=current_user.total_days_points%></p>
+<% end %>
+<p>Score: <%=scoreboard.day_points%></p>
+<% unless current_user.scoreboards.size.zero? %>
+  <p>Average Commits Per Day: <%= (current_user.scoreboards.map(&:commits).reduce(:+)) / (current_user.scoreboards.size ) %></p>
+<% end %>
+
+<p>Commits: <%#scoreboard.commits%></p>
+
+  <div class="chart1">
+    <%= area_chart current_user.scoreboards.where({ "cohort" => @set_cohort }).group(:day).sum(:day_points) , width: "300px", height: "120px",colors: ["#ff7885", "#ffffff"] %>
+  </div>
+</div><!-- END scoreInfo -->

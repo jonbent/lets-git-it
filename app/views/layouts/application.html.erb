@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LetsGitIt</title>
+    <meta name="viewport" content=" initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body id="body">
+  <div class="fixSafariOverflow">
+    <%= render partial: '/header' %>
+    <%= yield %>
+
+    <div id="leftPage" class="beforeSwipeLeft">
+      <div class="backGroundFadeLeft">
+        <% if @scoreboard %>
+          <%= render template: 'users/index'%>
+        <% end %>
+      </div>
+    </div><!-- End leftPage -->
+
+    <div id="rightPage" class="beforeSwipeRight">
+        <div class="backGroundFade">
+          <% if @scoreboard %>
+            <% @scoreboard = @scoreboard %>
+            <% @note = Note.new %>
+            <%= render template:"notes/new", locals:{scoreboard_id: @scoreboard.id, scoreboard: @scoreboard}%>
+          <% end %>
+        </div>
+      </div>
+  </div> <!-- END fixSafariOverflow -->
+  </body>
+</html>

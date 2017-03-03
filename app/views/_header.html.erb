@@ -1,0 +1,25 @@
+<nav class="xheader">
+  <ul>
+  	<% if logged_in? %>
+  		<%#= link_to "Logout", :logout %>
+      <li class="gitLi"><%= link_to :logout, class: "gitHubBtn" do %>
+          <div class="gitHubLogo"></div>
+          <div class="logText">Logout</div>
+      </li>
+      <% end %>
+  		<%# @github_response.each do |x|  %>
+  		<%#= p x %>
+  		<%# end %>
+   	<%else%>
+  		<%#= link_to "", :github_auth, class: "gitHubLogIn" %>
+      <li class="gitLi"><%= link_to :github_auth, class: "gitHubBtn" do %>
+        <div class="gitHubLogo"></div>
+        <div class="logText">Log in with GitHub</div>
+      </li>
+      <% end %>
+  	<% end %> <!-- END IF ELSE -->
+    <li class="RightPageNav">RightPage</li>
+    <li class="LeftPageNav">LeftPage</li>
+    <!-- <li class="homeNav">Home</li> -->
+  </ul>
+</nav>
