@@ -1,0 +1,74 @@
+
+<div class="totalDayPoints">
+  <img src="<%= @user.picture_url %>" alt="smiley face" height="150" width="150">
+<h1><%= @user.username %></h1>
+<div class="Breakline"></div>
+<ul>
+  <li>TOTAL DAY POINTS: <%= @user.total_days_points %></li>
+  <li><% if !@user_scoreboards.size.zero? %>
+    AVERAGE POINTS PER DAY: <%= (@user.total_days_points) / (@user_scoreboards.size) %> </li>
+  <% else  %>
+    <li>AVERAGE POINTS PER DAY: 0 </li>
+  <% end %>
+
+  <li>TOTAL COMMITS: <%= @total_commits %> </li>
+
+
+  <li><% if !@user_scoreboards.size.zero? %>
+    AVERAGE COMMITS PER DAY: <%= (@total_commits) / (@user_scoreboards.size ) %></li>
+  <% else  %>
+    <li>AVERAGE COMMITS PER DAY: 0 </li>
+  <% end %>
+
+
+  <li>LEVEL: <%= @user.level %></li>
+  <li>EXP: <%= @user.level_extra %>%</li>
+</ul>
+
+<div class="chart A">
+<% data = [['Level', @user.level_extra ]]%>
+<%= bar_chart data, width: "300px", height: "60px", max: 100,colors: ["#800080", "#999"]%>
+</div>
+
+
+<form action="/users/update_week" method="get">
+
+  <select name="users[update_week]" id="post_week_id">
+    <option value="1">Week 1</option>
+    <option value="2">Week 2</option>
+    <option value="3">Week 3</option>
+    <option value="4">Week 4</option>
+    <option value="5">Week 5</option>
+    <option value="6">Week 6</option>
+    <option value="7">Week 7</option>
+    <option value="8">Week 8</option>
+    <option value="9">Week 9</option>
+  </select>
+<input type="submit">
+</form>
+<div class="chart B">
+<%= area_chart @user_scoreboards.where({ "week" => @set_week }).group(:day).sum(:day_points) , width: "500px", height: "200px" %>
+</div>
+
+<form action="/users/update_cohort" method="get">
+  <select name="users[update_cohort]" id="post_week_id">
+    <option value="Squirrels">Squirrels</option>
+    <option value="Otters">Otters</option>
+  </select>
+<input type="submit">
+</form>
+<div class="chart C">
+<%= area_chart @user_scoreboards.where({ "cohort" => @set_cohort }).group(:day).sum(:day_points) , width: "500px", height: "200px",colors: ["800080", "#999"] %>
+</div>
+
+</div> <!-- END TotalDayPoints -->
+
+
+
+
+
+
+
+
+<!-- <%= options_for_select([['Lisbon', 1], ['Madrid', 2]]) %> -->
+<!-- <%= area_chart @user_scoreboards.group(:day).sum(:day_points) , width: "500px", height: "200px",colors: ["pink", "#999"] %> -->

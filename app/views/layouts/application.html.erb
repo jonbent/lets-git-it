@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LetsGitIt</title>
+    <meta name="viewport" content=" initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body id="body">
+  <div class="fixSafariOverflow">
+    <%= render partial: '/header' %>
+    <% if logged_in? && @scoreboard%>
+      <div id="leftPage" class="beforeSwipeLeft home-page-slider hidden">
+        <div class="backGroundFadeLeft">
+          <% if @scoreboard %>
+            <%= render template: 'users/index'%>
+          <% end %>
+        </div>
+      </div><!-- End leftPage -->
+    <% end %>
+    <div class="home home-page-slider">
+      <% if @scoreboard %>
+        <%= render template: 'scoreboards/show' %>
+      <% else %>
+      <!-- <div class="home home-page-slider"> -->
+        <%= render template: 'scoreboards/new' %>
+      <% end %>
+    </div>
+    <% if logged_in? && @scoreboard%>
+      <div id="rightPage" class="beforeSwipeRight home-page-slider hidden">
+          <div class="backGroundFade">
+            <% if @scoreboard %>
+              <% @note = Note.new %>
+              <%= render template:"notes/new", locals:{scoreboard_id: @scoreboard.id, scoreboard: @scoreboard}%>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+  </div> <!-- END fixSafariOverflow -->
+  </body>
+</html>

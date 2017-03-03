@@ -1,0 +1,27 @@
+<div class="leaderBoard">
+<h1 class="firstH1">Welcome to Let's Git It!</h1>
+<h1> Leaderboard </h1>
+<div class="Breakline"></div>
+
+<table>
+	<tr>
+		<th></th>
+		<th>Username</th>
+		<th>Cohort</th>
+		<th>Points</th>
+		<!-- <th>Commits</th> -->
+		<br>
+	</tr>
+	<% User.where.not(total_points: nil).order(total_points: :desc).limit(7).each do |user| %>
+	<tr>
+		<% if user.picture_url.nil? %>
+			<%  user.picture_url = "http://www.brunningonline.net/simon/blog/archives/South%20Park%20Avatar.jpg"%>
+		<% end %>
+		<td><img src="<%= user.picture_url %>" alt="schema.png" height="100" width="100"></td>
+		<td class="words"><%= link_to "#{user.username}", user_path(user)%></td>
+		<td class="words cohort"> <%= user.cohort %></td>
+		<td class="words"> <%= user.total_points %></td>
+	</tr>
+	<% end %>
+</table>
+</div>

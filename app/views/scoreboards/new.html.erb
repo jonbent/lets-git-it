@@ -1,0 +1,16 @@
+  <!-- views/scoreboards/new -->
+
+<!-- <article id="home" class="home"> -->
+
+<div class="startGamehome">
+
+<% if logged_in? %>
+	<h1>Start a New Game</h1>
+  <div class="Breakline"></div>
+	<%=render "form"%>
+<% else %>
+
+	<%= render template: 'scoreboards/leaderboard' %>
+<% end %>
+</div>
+<!-- </article> -->

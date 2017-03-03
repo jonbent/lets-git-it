@@ -1,0 +1,18 @@
+<article class="_scoreboard_challenges">
+<div class="views scorboards scoreboard_challenges">
+	<h1>Challenges</h1>
+	<% @challenges.each do |challenge| %>
+	<h2><%= challenge.title %></h2>
+	<div class="Breakline"></div>
+	<form action="/scoreboards/<%=@scoreboard.id%>/challenges/<%=challenge.id%>">
+		<ul>
+			<li><input type="button" class="release-checkbox"> Read Instructions</li>
+			<% challenge.releases.times do |i| %>
+			<li><input type="button" class="release-checkbox"> Release <%=i%></li>
+			<% end %>
+			<li><input type="button" class="release-checkbox"> Make Pull Request</li>
+		</ul>
+	</form>
+	<% end %>
+</div>
+</article>
