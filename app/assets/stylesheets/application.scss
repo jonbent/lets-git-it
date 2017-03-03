@@ -339,7 +339,11 @@ color: red;
   border:none;
   box-shadow: 0px 0px 1px $purple;
   border-radius: 2px;
+  font-size: 1em;
 }
+/*.notes-container input[type=textarea]{
+  font-size: 1em;
+}*/
 
 .notes-container input[type=submit]{
   /*outline: none;*/
@@ -370,6 +374,7 @@ textarea#note_body{
   border-radius: 2px;
   width:80%;
   height:100px;
+  font-size: 1em;
 }
 textarea#note_body:focus{
   outline: none;
@@ -403,6 +408,15 @@ margin-bottom: 30px;
 .downLoadNotes a{
   text-align: center;
   color: white;
+}
+.allNotes{
+  color:white;
+}
+.notes-container li{
+ /* color:red;*/
+}
+.notes-container label{
+  font-size: 1.5em;
 }
 
 /*-----------Right Page END---------- */
