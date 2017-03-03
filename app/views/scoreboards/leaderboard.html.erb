@@ -1,4 +1,7 @@
+<div class="leaderBoard">
+<h1 class="firstH1">Welcome to Let's Git It!</h1>
 <h1> Leaderboard </h1>
+<div class="Breakline"></div>
 
 <table>
 	<tr>
@@ -15,9 +18,10 @@
 			<%  user.picture_url = "http://www.brunningonline.net/simon/blog/archives/South%20Park%20Avatar.jpg"%>
 		<% end %>
 		<td><img src="<%= user.picture_url %>" alt="schema.png" height="100" width="100"></td>
-		<td><%= link_to "#{user.username}", user_path(user)%></td>
-		<td> <%= user.cohort %></td>
-		<td> <%= user.total_points %></td>
+		<td class="words"><%= link_to "#{user.username}", user_path(user)%></td>
+		<td class="words cohort"> <%= user.cohort %></td>
+		<td class="words"> <%= user.total_points %></td>
 	</tr>
 	<% end %>
 </table>
+</div>
