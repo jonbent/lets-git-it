@@ -28,20 +28,21 @@ class ScoreboardsController < ApplicationController
 
 	def download
 		@scoreboard = Scoreboard.find(params[:id])
-		path = "notes_for_day.txt"; array=[]
-		@scoreboard.notes.each do |element|
-			array << "TITLE: "
-			array << element.title
+		path = "week#{@scoreboard.week}_#{@scoreboard.day}.txt"; array=[]
+		notes_string = ""
+		@scoreboard.notes.each do |note|
+			notes_string += "Title: "
+			notes_string += note.title + "\n\n"
 
-			array << "BODY: "
-			array << element.body
+			notes_string += "Body: \n"
+			notes_string += note.body + "\n\n"
 		end
 
 		File.open(path, "w+") do |f|
-		  f.write(array)
+		  f.write(notes_string)
 		end
 
-		send_file "notes_for_day.txt"
+		send_file path
 	end
 
 	private
