@@ -117,7 +117,8 @@ var completeChallengeRelease = function(){
       url: url,
       method: "PATCH"
     }).done(function(response){
-      $('#leftPage').html(response)
+      // $('#leftPage').html(response)
+      $('#points-container').html(response);
     })
   })
 }
