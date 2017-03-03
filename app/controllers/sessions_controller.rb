@@ -1,12 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :verify_authenticity_token, :only => :create
   def create
-
-    p ENV['GITHUB_KEY']
-    p ENV['GITHUB_SECRET']
-    p "*" * 30
-    # p  auth_hash
-    # p  auth_hash.class
     user = User.find_or_create_by(:uid => auth_hash[:uid], :picture_url => auth_hash[:extra][:raw_info][:avatar_url]) do |user|
       user.username = auth_hash[:info][:name]
       user.user_hash = auth_hash
