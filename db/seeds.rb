@@ -945,21 +945,51 @@ challenges = [
 
 
 
-days=['Monday','Tuesday','Wednesday','Thursday','Friday']; users_array=[]
+days=['Monday','Tuesday','Wednesday','Thursday','Friday']
+cohorts = ['Squirrels','Otters','Frogs','Wolfs', 'Fireflies', 'Chipmunks']
+users_array=[]
+
+# ==== team seed
+jonbent = User.create(username: 'jonbent', phase: 3, cohort: "Squirrels",
+total_points: 0, number_commits: 0, picture_url: 'https://avatars2.githubusercontent.com/u/21002070?v=3&s=400' )
+
+moth = User.create(username: 'slinkous', phase: 3, cohort: "Squirrels",
+total_points: 0, number_commits: 0, picture_url: 'https://avatars3.githubusercontent.com/u/22842169?v=3&s=460' )
+
+george_c = User.create(username: 'georgecode', phase: 3, cohort: "Squirrels",
+total_points: 0, number_commits: 0, picture_url: 'https://avatars0.githubusercontent.com/u/5958203?v=3&s=460' )
+
+george_b = User.create(username: 'georgebabayan', phase: 3, cohort: "Squirrels",
+total_points: 0, number_commits: 0, picture_url: 'https://avatars2.githubusercontent.com/u/20651552?v=3&s=460' )
+users_array << moth << jonbent << george_c << george_b
+
+
+50.times do
+	user = users_array.sample
+	Scoreboard.create(user: user, day_points: rand(20), day: days.sample,
+	week: rand(8), cohort: user.cohort, commits: rand(10))
+end
+
+# ==== team seed
+
+
+
 
 30.times do
 	internet_name = Faker::Internet.user_name
-	users_array << User.create(username: Faker::Name.name, phase: 2, cohort: "Squirrels",
-	total_points: 0, number_commits: rand(200), picture_url: Faker::Avatar.image(internet_name) )
+	users_array << User.create(username: Faker::Name.name, phase: 2, cohort: cohorts.sample,
+	total_points: 0, number_commits: 0, picture_url: Faker::Avatar.image(internet_name) )
 end
 
-50.times do
-	Scoreboard.create(user: users_array.sample, day_points: rand(75), day: days.sample,
-	week: rand(8),  cohort: "Squirrels", commits: rand(10))
+30.times do
+	user = users_array.sample
+	Scoreboard.create(user: user, day_points: rand(50), day: days.sample,
+	week: rand(8), cohort: user.cohort, commits: rand(10))
 end
 
 users_array.each do |user|
 	user.total_points =  user.total_days_points
+	user.number_commits =  user.total_commits
 	user.save
 end
 
