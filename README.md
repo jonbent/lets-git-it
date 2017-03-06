@@ -1,4 +1,4 @@
-# Lets Git It!
+# [Lets Git It!](http://lets-git-it.herokuapp.com)
 
 		Lets Git it is a web app to gamify work on repositories, specifically designed for bootcamp students.
 
