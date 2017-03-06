@@ -1,10 +1,14 @@
 # [Lets Git It!](http://lets-git-it.herokuapp.com)
 
-		Lets Git it is a web app to gamify work on repositories, specifically designed for bootcamp students.
+**Lets Git It** is a web app to gamify work on repositories, specifically designed for bootcamp students.
+
+## The Problem
+
+Intensive learning programs present unique struggles for even the most dedicated students to recall and track their progress in these extraordinarily fast-paced settings. Additionally, learning management systems can be sterile and disconnect students from their own feelings of autonomy and responsibility for their own learning. Our goal is to create a product that empowers students to self-report their own progress and adds an element of fun motivation as they traverse these challenging alternative-learning programs. 
 
 ## Updates
 
-## Team
+## Authors 
 
 - [George Babayan](https://github.com/georgebabayan)
 - [George Czurlanis](https://github.com/georgecode)
@@ -17,6 +21,4 @@ We conform to the [AirBnB Ruby Style Guide](http://airbnb.io/projects/ruby) and 
 
 Our Git Work Flow conforms to the [DBC Git Workflow](https://github.com/sf-squirrels-2017/phase-3-guide/blob/sf-chi/resources/git-workflow.md)
 
-## Much To Do About Nothing
 
-## User Stories
