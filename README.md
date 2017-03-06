@@ -4,7 +4,7 @@
 
 ## Updates
 
-<img scr='gif_for_readme.gif'>
+<img scr="gif_for_readme.gif" />
 
 ## Team
 
