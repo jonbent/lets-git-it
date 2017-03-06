@@ -4,6 +4,8 @@
 
 ## Updates
 
+<img scr='gif_for_readme.gif'>
+
 ## Team
 
 - [George Babayan](https://github.com/georgebabayan)
