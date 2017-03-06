@@ -4,7 +4,7 @@
 
 ## Updates
 
-![LETS-GIT-IT App Snapshot](/gif_for_readme.gif)
+![LETS-GIT-IT App Snapshot](/project.gif)
 
 ## Team
 
