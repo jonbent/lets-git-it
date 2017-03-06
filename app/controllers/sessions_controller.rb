@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
     if !user
       user = User.create(uid: auth_hash[:uid], picture_url: auth_hash[:extra][:raw_info][:avatar_url])
       user.username = auth_hash[:info][:name]
-      user.user_hash = auth_hash
       user.save
     end
     session[:user_id] = user.id
