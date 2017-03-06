@@ -4,7 +4,7 @@
 
 ## Updates
 
-<img scr="http://imgur.com/a/LmVJy" />
+![LETS-GIT-IT App Snapshot](/gif_for_readme.gif)
 
 ## Team
 
