@@ -24,6 +24,29 @@ Intensive learning programs present unique struggles for even the most dedicated
 - [Sarah Linkous](https://github.com/slinkous)
 - [Jon Bent](https://github.com/jonbent)
 
+## Team Dynamics
+
+* Schedule
+  * 9am - 7pm
+
+* Stand-Ups
+  * 9am
+  * 2pm
+  * 5:40pm
+
+* Check-In Protocol
+  * Previous work
+  * Future work
+  * Blockers
+
+* Teamwork
+  * Horizontal slice
+  * Pair for challenging features
+  * PR author does not merge their own PR
+  * Collaborate to fix and solve merge conflicts
+  * Branch for each feature
+  * Scrum board
+
 ## Contributing
 
 We conform to the [AirBnB Ruby Style Guide](http://airbnb.io/projects/ruby) and the [AirBnB JavaScript Style Guide](http://airbnb.io/projects/javascript)
