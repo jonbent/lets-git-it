@@ -2,6 +2,8 @@
 
 **Lets Git It** is a web app to gamify work on repositories, specifically designed for bootcamp students.
 
+![page-gif](/project.gif)
+
 ## The Problem
 
 Intensive learning programs present unique struggles for even the most dedicated students to recall and track their progress in these extraordinarily fast-paced settings. Additionally, learning management systems can be sterile and disconnect students from their own feelings of autonomy and responsibility for their own learning. Our goal is to create a product that empowers students to self-report their own progress and adds an element of fun motivation as they traverse these challenging alternative-learning programs. 
