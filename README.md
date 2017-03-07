@@ -50,6 +50,12 @@ Intensive learning programs present unique struggles for even the most dedicated
   * Collaborate to fix and solve merge conflicts
   * Branch for each feature
   * Scrum board
+  
+## Next Steps
+
+- Game Balancing and Testing
+- Commit Integration with GitHub
+- Google Calendar Integration 
 
 ## Contributing
 
