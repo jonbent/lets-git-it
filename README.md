@@ -14,6 +14,12 @@ Intensive learning programs present unique struggles for even the most dedicated
 - Players can gain points for completing individual releases of these challenges, as well as other helpful metalearning practices, like closely reading instructions and asking for clarification. 
 - Over time, players advance levels based on their total points, and can even become a leader in a top scoreboard for the entire campus or their cohort!
 
+## MVP Functionality
+* Leaderboard
+* Create Notes
+* Scoreboard
+* Have Fun!
+
 ## Authors 
 
 
