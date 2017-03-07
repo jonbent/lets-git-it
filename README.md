@@ -5,10 +5,10 @@
 ![page-gif](/project.gif)
 
 ## Getting Started
-  To begin using Let's Git It, users will need to sign in with their Github Accounts through the Github Oauth, and grant access to private repositories and organization repositories to the app.
-  After registration, users can select the day of the week, week of the Dev Bootcamp Program, and their cohort to automatically insert the day's challenges into the game to-do list
-  Players can gain points for completing individual releases of these challenges, as well as other helpful metalearning practices, like closely reading instructions and asking for clarification. 
-  Over time, players advance levels based on their total points, and can even become a leader in a top scoreboard for the entire campus or their cohort!
+- To begin using Let's Git It, players will need to sign in with their Github Accounts through the Github Oauth, and grant access to private repositories and organization repositories to the app.
+ - After registration, users can select the day of the week, week of the Dev Bootcamp Program, and their cohort to automatically insert the day's challenges into the game to-do list
+- Players can gain points for completing individual releases of these challenges, as well as other helpful metalearning practices, like closely reading instructions and asking for clarification. 
+- Over time, players advance levels based on their total points, and can even become a leader in a top scoreboard for the entire campus or their cohort!
 
 ## The Problem
 
