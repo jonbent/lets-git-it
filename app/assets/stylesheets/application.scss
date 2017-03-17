@@ -113,7 +113,7 @@ body{
 }
 
 .fixSafariOverflow{
-  background-color: #3b3251;
+  // background-color: #3b3251;
 }
 
 
@@ -518,8 +518,8 @@ margin-bottom: 30px;
 /*-------Home start New Game-------*/
 .startGamehome{
   height:1000px;
-  background: url('/image/xspace.gif');
-  background-size: cover;
+  // background: url('/image/xspace.gif');
+  // background-size: cover;
  /* border:red 1px solid;*/
   color: white;
   font-weight: 300;
@@ -752,13 +752,13 @@ background-color: rgba(255,255,255,0.1);
 /*----------POP-UP PAGE END----------*/
 
 .home{
-  background: url('/image/xspace.gif');
+  // background: url('/image/xspace.gif');
   /*background-size: cover;*/
     /*background-attachment: fixed;*/
     /*background-position: center;*/
-    background-repeat: no-repeat;
-    background-size: cover;
-    height:100%;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // height:100%;
     /*background: no-repeat;*/
 /*    height: 100%;
     width:100;*/
@@ -852,19 +852,28 @@ background-color: rgba(255,255,255,0.1);
 
 .hidden{
   display: none;
-  background: url('/image/xspace.gif');
-  background-size: cover;
+  // background: url('/image/xspace.gif');
+  // background-size: cover;
   /*height:2000px;*/
   /*height: 500px;*/
   width:100%;
   /*margin-left: 5%;*/
   /*height:1000px;*/
   /*margin-top: 10px;*/
-  margin-right: -100%;
-  transition: margin-right 0.5s;
-  -webkit-transition: margin-right 0.5s;
+  // margin-right: -100%;
+  // transition: margin-right 0.5s;
+  // -webkit-transition: margin-right 0.5s;
 }
 
 .views.scoreboard.show .dayPoints{
  margin-bottom: 40px;
+}
+
+body{
+  background: url('/image/xspace.gif');
+  background-color: #3b3251;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height:100%;
+  width:100;
 }
