@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
-  skip_before_action :verify_authenticity_token, :only => :create
+  skip_before_action :verify_authenticity_token, only: :create
   def create
     user = User.find_by(uid: auth_hash[:uid])
-    if !user
+    unless user
       user = User.create(uid: auth_hash[:uid], picture_url: auth_hash[:extra][:raw_info][:avatar_url])
       user.username = auth_hash[:info][:name]
       user.save
@@ -22,8 +22,8 @@ class SessionsController < ApplicationController
   end
 
   private
-  def auth_hash
-    request.env["omniauth.auth"]
-  end
 
+  def auth_hash
+    request.env['omniauth.auth']
+  end
 end

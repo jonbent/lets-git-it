@@ -10,60 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170228004249) do
-
+ActiveRecord::Schema.define(version: 20_170_228_004_249) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "challenges", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "releases"
-    t.integer  "completed"
-    t.integer  "scoreboard_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "week"
-    t.string   "day"
-    t.string   "cohort"
-    t.index ["scoreboard_id"], name: "index_challenges_on_scoreboard_id", using: :btree
+  create_table 'challenges', force: :cascade do |t|
+    t.string   'title'
+    t.integer  'releases'
+    t.integer  'completed'
+    t.integer  'scoreboard_id'
+    t.datetime 'created_at',    null: false
+    t.datetime 'updated_at',    null: false
+    t.integer  'week'
+    t.string   'day'
+    t.string   'cohort'
+    t.index ['scoreboard_id'], name: 'index_challenges_on_scoreboard_id', using: :btree
   end
 
-  create_table "notes", force: :cascade do |t|
-    t.string   "title"
-    t.string   "body"
-    t.string   "note_type"
-    t.integer  "scoreboard_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["scoreboard_id"], name: "index_notes_on_scoreboard_id", using: :btree
+  create_table 'notes', force: :cascade do |t|
+    t.string   'title'
+    t.string   'body'
+    t.string   'note_type'
+    t.integer  'scoreboard_id'
+    t.datetime 'created_at',    null: false
+    t.datetime 'updated_at',    null: false
+    t.index ['scoreboard_id'], name: 'index_notes_on_scoreboard_id', using: :btree
   end
 
-  create_table "scoreboards", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "day_points"
-    t.string   "day"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "week"
-    t.string   "cohort"
-    t.integer  "commits"
-    t.index ["user_id"], name: "index_scoreboards_on_user_id", using: :btree
+  create_table 'scoreboards', force: :cascade do |t|
+    t.integer  'user_id'
+    t.integer  'day_points'
+    t.string   'day'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.integer  'week'
+    t.string   'cohort'
+    t.integer  'commits'
+    t.index ['user_id'], name: 'index_scoreboards_on_user_id', using: :btree
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "username"
-    t.integer  "phase"
-    t.string   "cohort"
-    t.integer  "total_points"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.string   "uid"
-    t.integer  "number_commits"
-    t.string   "picture_url"
-    t.string   "user_hash"
+  create_table 'users', force: :cascade do |t|
+    t.string   'username'
+    t.integer  'phase'
+    t.string   'cohort'
+    t.integer  'total_points'
+    t.datetime 'created_at',     null: false
+    t.datetime 'updated_at',     null: false
+    t.string   'uid'
+    t.integer  'number_commits'
+    t.string   'picture_url'
+    t.string   'user_hash'
   end
 
-  add_foreign_key "challenges", "scoreboards"
-  add_foreign_key "notes", "scoreboards"
-  add_foreign_key "scoreboards", "users"
+  add_foreign_key 'challenges', 'scoreboards'
+  add_foreign_key 'notes', 'scoreboards'
+  add_foreign_key 'scoreboards', 'users'
 end

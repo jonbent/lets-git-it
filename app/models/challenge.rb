@@ -4,13 +4,12 @@ class Challenge < ApplicationRecord
   after_initialize :init
 
   def init
-    if !self.completed
-      self.completed = 0
-    end
+    self.completed = 0 unless completed
   end
+
   def completed_release
     p self
-    p self.completed
+    p completed
     self.completed += 1
   end
 end
