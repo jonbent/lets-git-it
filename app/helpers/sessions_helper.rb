@@ -18,5 +18,4 @@ module SessionsHelper
   def ensure_logged_in
     redirect_to :root unless logged_in?
   end
-
 end

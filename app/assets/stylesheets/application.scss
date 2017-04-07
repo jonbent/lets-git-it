@@ -155,7 +155,7 @@ nav.xheader  li.gitLi{
 }
 
 .gitHubLogo{
-  background:url(gitHubLogo2017.png);
+  background:url('/image/gitHubLogo2017.png');
   background-size: cover;
   width:25px;
   height:25px;
@@ -518,7 +518,7 @@ margin-bottom: 30px;
 /*-------Home start New Game-------*/
 .startGamehome{
   height:1000px;
-  background: url(xspace.gif);
+  background: url('/image/xspace.gif');
   background-size: cover;
  /* border:red 1px solid;*/
   color: white;
@@ -752,7 +752,7 @@ background-color: rgba(255,255,255,0.1);
 /*----------POP-UP PAGE END----------*/
 
 .home{
-  background: url(xspace.gif);
+  background: url('/image/xspace.gif');
   /*background-size: cover;*/
     /*background-attachment: fixed;*/
     /*background-position: center;*/
@@ -852,7 +852,7 @@ background-color: rgba(255,255,255,0.1);
 
 .hidden{
   display: none;
-  background: url(xspace.gif);
+  background: url('/image/xspace.gif');
   background-size: cover;
   /*height:2000px;*/
   /*height: 500px;*/
