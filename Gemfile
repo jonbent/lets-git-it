@@ -48,7 +48,7 @@ gem 'omniauth-github'
 # gem 'github_api'
 
 #help create charts
-gem "chartkick"
+gem "chartkick", '>= 3.3.0'
 
 #gem to group date
 gem 'groupdate'
