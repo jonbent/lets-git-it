@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 #OmniAuth: Standardized Multi-Provider Authentication
-gem 'omniauth', '~> 1.6.1'
+gem 'omniauth', '~> 1.9.2'
 
 #OmniAuth Github
 gem 'omniauth-github', '~> 1.3.0'
